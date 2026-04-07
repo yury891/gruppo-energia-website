@@ -55,32 +55,32 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 .hero{background:#F4F7FB;padding:64px 40px;display:grid;grid-template-columns:60% 40%;gap:48px;align-items:center;border-bottom:3px solid #1A4F96}
 .hero-label{font-size:11px;color:#1A4F96;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
 .hero h1{font-size:26px;font-weight:800;color:#0D2E5A;line-height:1.35;margin-bottom:10px}
-.hero-subtitle{font-size:13px;color:#1A4F96;font-weight:600;letter-spacing:1px;margin-bottom:18px}
-.hero-sub{font-size:14px;color:#4A6080;line-height:1.75;margin-bottom:20px}
+.hero-subtitle{font-size:13px;color:#1A4F96;font-weight:600;letter-spacing:1px;margin-bottom:16px}
+.hero-sub{font-size:14px;color:#4A6080;line-height:1.7;margin-bottom:20px}
 .hero-targets{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
 .target-tag{background:#fff;border:1px solid #D0D8E8;border-radius:20px;padding:5px 14px;font-size:11px;color:#1A4F96;font-weight:600;text-decoration:none;transition:all 0.2s}
 .target-tag:hover{background:#1A4F96;color:#fff;border-color:#1A4F96}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.btn-primary{background:#F5C500;color:#1A4F96;font-size:14px;font-weight:700;padding:14px 28px;border-radius:4px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
-.btn-primary:hover{background:#e6b800}
-.btn-secondary{background:transparent;color:#1A4F96;font-size:14px;font-weight:600;padding:14px 28px;border-radius:4px;border:1.5px solid #1A4F96;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.2s}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;align-items:stretch}
+.btn-primary{background:#F5C500;color:#1A4F96;font-size:14px;font-weight:700;padding:14px 24px;border-radius:4px;border:2px solid #F5C500;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;transition:all 0.2s}
+.btn-primary:hover{background:#e6b800;border-color:#e6b800}
+.btn-secondary{background:transparent;color:#1A4F96;font-size:14px;font-weight:600;padding:14px 24px;border-radius:4px;border:2px solid #1A4F96;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;transition:all 0.2s}
 .btn-secondary:hover{background:#1A4F96;color:#fff}
 .hero-image{background:#1A4F96;border-radius:8px;height:300px;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .hero-image img{width:100%;height:100%;object-fit:cover;border-radius:8px}
 .hero-image-placeholder{color:rgba(255,255,255,0.4);font-size:12px;text-align:center;padding:20px;line-height:1.8}
 
 /* TRUST BAR */
-.trust-bar{background:#1A4F96;padding:16px 40px;display:flex;gap:20px;justify-content:center;flex-wrap:wrap;align-items:center}
+.trust-bar{background:#1A4F96;padding:14px 40px;display:flex;gap:20px;justify-content:center;flex-wrap:wrap;align-items:center}
 .trust-item{color:#fff;font-size:12px;font-weight:500;display:flex;align-items:center;gap:8px}
-.trust-dot{width:7px;height:7px;background:#F5C500;border-radius:50%;flex-shrink:0}
+.trust-dot{width:6px;height:6px;background:#F5C500;border-radius:50%;flex-shrink:0}
 .trust-item.highlight{color:#F5C500;font-weight:700;font-size:13px}
 
 /* KPI BAR */
-.kpi-bar{background:#0D2E5A;padding:24px 40px;display:flex;justify-content:center}
-.kpi-item{flex:1;text-align:center;border-right:1px solid rgba(255,255,255,0.15);padding:8px 24px}
+.kpi-bar{background:#0D2E5A;padding:32px 40px;display:flex;justify-content:center}
+.kpi-item{flex:1;text-align:center;border-right:1px solid rgba(255,255,255,0.12);padding:0 24px}
 .kpi-item:last-child{border-right:none}
-.kpi-number{font-size:28px;font-weight:800;color:#F5C500;margin-bottom:4px}
-.kpi-label{font-size:12px;color:rgba(255,255,255,0.8);line-height:1.4}
+.kpi-number{font-size:36px;font-weight:800;color:#F5C500;line-height:1;margin-bottom:8px}
+.kpi-label{font-size:12px;color:rgba(255,255,255,0.75);line-height:1.4;max-width:120px;margin:0 auto}
 
 /* SECTIONS */
 .section-wrap{background:#fff}
@@ -93,13 +93,13 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 
 /* PRODUCTS */
 .products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:20px}
-.product-card{border:1px solid #D0D8E8;border-top:3px solid #1A4F96;border-radius:4px;padding:18px;transition:box-shadow 0.2s}
+.product-card{border:1px solid #D0D8E8;border-top:3px solid #1A4F96;border-radius:4px;padding:18px;transition:box-shadow 0.2s;display:flex;flex-direction:column}
 .product-card:hover{box-shadow:0 4px 16px rgba(26,79,150,0.1)}
 .product-card.accent{border-top-color:#F5C500}
 .product-card h3{font-size:13px;font-weight:700;color:#0D2E5A;margin-bottom:8px;line-height:1.4}
-.product-card p{font-size:11px;color:#5A6A7A;line-height:1.6;margin-bottom:10px}
+.product-card p{font-size:11px;color:#5A6A7A;line-height:1.6;margin-bottom:10px;flex:1}
 .product-count{font-size:10px;color:#8A9AB0;margin-bottom:12px;font-style:italic}
-.product-link{font-size:12px;color:#1A4F96;font-weight:700;text-decoration:none}
+.product-link{font-size:12px;color:#1A4F96;font-weight:700;text-decoration:none;margin-top:auto}
 .product-link:hover{text-decoration:underline}
 .products-footer{background:#F4F7FB;border-radius:6px;padding:16px 20px;font-size:13px;color:#4A6080;line-height:1.6;border-left:3px solid #F5C500}
 
@@ -109,14 +109,17 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 .mid-image-placeholder{color:#8A9AB0;font-size:12px;text-align:center;padding:20px;line-height:1.8}
 
 /* VALUE PROP */
-.value-intro{font-size:14px;color:#1A4F96;font-weight:600;margin-bottom:24px;font-style:italic}
+.value-intro{font-size:14px;color:#4A6080;line-height:1.7;margin-bottom:28px;max-width:760px}
 .value-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .value-card{background:#fff;border-radius:6px;padding:28px;border-left:4px solid #1A4F96}
 .value-card.yellow{border-left-color:#F5C500}
-.value-card h3{font-size:15px;font-weight:700;color:#0D2E5A;margin-bottom:16px}
+.value-card-label{font-size:10px;font-weight:700;color:#1A4F96;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.value-card.yellow .value-card-label{color:#B8960A}
+.value-card h3{font-size:15px;font-weight:700;color:#0D2E5A;margin-bottom:8px}
+.value-card-intro{font-size:13px;color:#5A6A7A;line-height:1.6;margin-bottom:16px}
 .value-list{list-style:none;padding:0}
 .value-list li{font-size:13px;color:#4A6080;padding:5px 0;display:flex;align-items:flex-start;gap:10px;line-height:1.5}
-.value-list li::before{content:"";width:7px;height:7px;background:#1A4F96;border-radius:50%;margin-top:5px;flex-shrink:0}
+.value-list li::before{content:"";width:6px;height:6px;background:#1A4F96;border-radius:50%;margin-top:6px;flex-shrink:0}
 .value-card.yellow .value-list li::before{background:#F5C500}
 
 /* INDUSTRIES */
@@ -140,20 +143,20 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 
 /* EXPORT */
 .export-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
-.export-markets{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;margin-bottom:24px}
+.export-markets{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
 .market-tag{background:#fff;border:1px solid #D0D8E8;border-radius:20px;padding:6px 16px;font-size:12px;color:#1A4F96;font-weight:600}
 .export-box{background:#fff;border-radius:8px;padding:28px;border:1px solid #D0D8E8}
 .export-box h4{font-size:11px;font-weight:700;color:#1A4F96;margin-bottom:20px;letter-spacing:1px;text-transform:uppercase;padding-bottom:12px;border-bottom:1px solid #F0F4FA}
 .export-item{font-size:13px;color:#4A6080;padding:10px 0;border-bottom:1px solid #F4F7FB;display:flex;align-items:center;gap:12px;line-height:1.5}
 .export-item:last-child{border-bottom:none;padding-bottom:0}
-.export-item::before{content:"";width:7px;height:7px;background:#F5C500;border-radius:50%;flex-shrink:0}
+.export-item::before{content:"";width:6px;height:6px;background:#F5C500;border-radius:50%;flex-shrink:0}
 
 /* CTA BANNER */
 .cta-banner{background:#0D2E5A;padding:56px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px}
 .cta-banner h2{font-size:22px;font-weight:800;color:#fff;margin-bottom:10px}
 .cta-banner p{font-size:14px;color:rgba(255,255,255,0.8);line-height:1.6;max-width:500px}
-.cta-btn-white{background:#fff;color:#0D2E5A;font-size:15px;font-weight:800;padding:18px 36px;border-radius:4px;white-space:nowrap;text-decoration:none;display:inline-block;transition:all 0.2s}
-.cta-btn-white:hover{background:transparent;color:#fff;border:2px solid #fff}
+.cta-btn-white{background:#fff;color:#0D2E5A;font-size:15px;font-weight:800;padding:16px 32px;border-radius:4px;white-space:nowrap;text-decoration:none;display:inline-block;border:2px solid #fff;transition:all 0.2s}
+.cta-btn-white:hover{background:transparent;color:#fff}
 
 /* FOOTER */
 .footer{background:#F4F7FB;padding:56px 40px 24px;border-top:3px solid #1A4F96}
@@ -166,9 +169,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 .footer-col h4{font-size:11px;font-weight:700;color:#1A4F96;margin-bottom:14px;letter-spacing:1px;text-transform:uppercase}
 .footer-col a{display:block;font-size:12px;color:#5A6A7A;text-decoration:none;line-height:2.2}
 .footer-col a:hover{color:#1A4F96}
-.footer-keywords{border-top:1px solid #D0D8E8;padding:14px 0 10px;font-size:10px;color:#B0BEC5;line-height:1.8;margin-top:16px}
-.footer-keywords-label{font-size:10px;color:#8A9AB0;font-weight:700;margin-bottom:4px}
-.footer-bottom{border-top:1px solid #D0D8E8;padding-top:16px;display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.footer-bottom{border-top:1px solid #D0D8E8;padding-top:16px;display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-top:24px}
 .footer-bottom a{font-size:11px;color:#8A9AB0;text-decoration:none}
 .footer-bottom a:hover{color:#1A4F96}
 .footer-copy{font-size:11px;color:#8A9AB0;margin-left:auto}
@@ -194,9 +195,10 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
   .cta-banner p{max-width:100%}
   .mid-cta{flex-direction:column;text-align:center;padding:32px 20px}
   .footer{padding:40px 20px 20px}
-  .trust-bar{gap:14px;padding:14px 20px}
-  .kpi-bar{flex-wrap:wrap;padding:20px}
-  .kpi-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding:12px;min-width:45%}
+  .trust-bar{gap:14px;padding:12px 20px}
+  .kpi-bar{flex-wrap:wrap;padding:24px 20px}
+  .kpi-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.12);padding:16px 12px;min-width:45%}
+  .kpi-item:last-child{border-bottom:none}
   .case-teaser{padding:40px 20px}
   .footer-copy{margin-left:0;margin-top:8px}
 }
@@ -207,10 +209,10 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
   .industries-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   .hero-btns{flex-direction:column}
-  .btn-primary,.btn-secondary{text-align:center;width:100%}
+  .btn-primary,.btn-secondary{width:100%;justify-content:center}
   .kpi-item{min-width:100%}
   .mid-cta-btns{flex-direction:column;width:100%}
-  .mid-cta-btns a{text-align:center}
+  .mid-cta-btns a{text-align:center;justify-content:center}
 }
 </style>
 </head>
@@ -250,15 +252,15 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
     <div class="hero-label">CAPACITOR BANKS · HARMONIC FILTERS · TRANSFORMERS · DRIVE COMPONENTS</div>
     <h1>LV &amp; MV Power Factor Correction and Harmonic Filtering Solutions for Industrial Applications</h1>
     <p class="hero-subtitle">Designed and Manufactured in Italy</p>
-    <p class="hero-sub">We design and manufacture capacitor banks, detuned reactors, harmonic filters, transformers and drive protection components — supporting panel builders, EPC contractors and industrial distributors from design to commissioning.</p>
+    <p class="hero-sub">We design and build capacitor banks, detuned reactors, harmonic filters, transformers and drive protection components — supporting panel builders, EPC contractors and distributors from specification to commissioning.</p>
     <div class="hero-targets">
       <a href="/applications/panel-builders" class="target-tag">Panel Builders →</a>
       <a href="/applications/epc-contractors" class="target-tag">EPC Contractors →</a>
       <a href="/applications/industrial-distributors" class="target-tag">Industrial Distributors →</a>
     </div>
     <div class="hero-btns">
-      <a href="/contact" class="btn-primary">Send Your Project Specifications</a>
-      <a href="/contact" class="btn-secondary">Request a Quote</a>
+      <a href="/contact" class="btn-primary">Send Your Specifications</a>
+      <a href="/catalogue" class="btn-secondary">Download Catalogue</a>
     </div>
   </div>
   <div class="hero-image">
@@ -271,30 +273,42 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
   </div>
 </section>
 
-<!-- TRUST BAR -->
+<!-- TRUST BAR — no overlap with KPI bar -->
 <div class="trust-bar">
-  <div class="trust-item highlight"><div class="trust-dot"></div>25+ Years Experience</div>
+  <div class="trust-item highlight"><div class="trust-dot"></div>Est. 1999 — 25+ Years</div>
   <div class="trust-item"><div class="trust-dot"></div>ISO 9001 Certified</div>
-  <div class="trust-item"><div class="trust-dot"></div>CE Marked Products</div>
-  <div class="trust-item"><div class="trust-dot"></div>IEC/EN Compliant</div>
+  <div class="trust-item"><div class="trust-dot"></div>CE Marked — Full Range</div>
   <div class="trust-item"><div class="trust-dot"></div>Type Tested Products</div>
   <div class="trust-item"><div class="trust-dot"></div>Made in Italy</div>
   <div class="trust-item"><div class="trust-dot"></div>Certificate of Origin Available</div>
+  <div class="trust-item"><div class="trust-dot"></div>Export Ready</div>
 </div>
 
-<!-- KPI BAR -->
+<!-- KPI BAR — different content from trust bar -->
 <div class="kpi-bar">
-  <div class="kpi-item"><div class="kpi-number">25+</div><div class="kpi-label">Years of Experience</div></div>
-  <div class="kpi-item"><div class="kpi-number">40+</div><div class="kpi-label">Countries Served</div></div>
-  <div class="kpi-item"><div class="kpi-number">1,400+</div><div class="kpi-label">Installations Worldwide</div></div>
-  <div class="kpi-item"><div class="kpi-number">8</div><div class="kpi-label">Product Families · 47 Types</div></div>
+  <div class="kpi-item">
+    <div class="kpi-number">40+</div>
+    <div class="kpi-label">Countries Served</div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-number">1,400+</div>
+    <div class="kpi-label">Installations Worldwide</div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-number">47</div>
+    <div class="kpi-label">Product Types across 8 Families</div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-number">100%</div>
+    <div class="kpi-label">CE Marked — Every Product</div>
+  </div>
 </div>
 
 <!-- PRODUCTS -->
 <div class="section-wrap"><div class="section">
   <div class="section-label">OUR PRODUCT LINES</div>
-  <h2>8 Product Families, 47 Product Types — From Components to Complete Switchboards</h2>
-  <p class="section-sub">CE marked and IEC/EN compliant across the full range. Custom configurations available. Full technical documentation included.</p>
+  <h2>8 Product Families, 47 Types — Components, Assemblies and Complete Switchboards</h2>
+  <p class="section-sub">Every product is CE marked and covered by full technical documentation. Custom configurations are available across all families.</p>
   <div class="products-grid">
     <div class="product-card">
       <h3>LV Power Factor Correction</h3>
@@ -310,7 +324,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
     </div>
     <div class="product-card accent">
       <h3>Power Electronics Capacitors</h3>
-      <p>DC-Link, AC/DC with internal safety device, 3-phase HF filter, heavy current and low inductance</p>
+      <p>DC-Link, AC/DC with internal safety device, 3-phase HF filter, heavy current and low inductance types</p>
       <div class="product-count">6 product types</div>
       <a href="/products/power-electronics-capacitors" class="product-link">View Products →</a>
     </div>
@@ -345,7 +359,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
       <a href="/products/motor-lighting-capacitors" class="product-link">View Products →</a>
     </div>
   </div>
-  <div class="products-footer">Not finding exactly what you need? We design custom configurations to your specifications — contact our technical team to discuss your project.</div>
+  <div class="products-footer">Need something outside the standard range? We design custom configurations to your project specifications — contact our technical team.</div>
 </div></div>
 
 <!-- MID IMAGE -->
@@ -359,28 +373,28 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 <!-- VALUE PROP -->
 <div class="section-alt-wrap"><div class="section-alt">
   <div class="section-label">WHY GRUPPO ENERGIA</div>
-  <h2>More Than a Component Supplier — A Technical Partner for Your Projects</h2>
-  <p class="value-intro">25 years of experience working alongside engineers, panel builders and procurement teams across Europe and beyond.</p>
+  <h2>More Than a Component Supplier</h2>
+  <p class="value-intro">In international projects, buyers often need more than a catalogue. They need reliable documentation, consistent technical communication and a supplier who understands the full project lifecycle — from design through to commissioning.</p>
   <div class="value-grid">
     <div class="value-card">
+      <div class="value-card-label">Technical Teams</div>
       <h3>For Engineers, Panel Builders &amp; EPC Contractors</h3>
+      <p class="value-card-intro">We work directly with design teams — not just as a parts supplier, but as a technical reference for reactive power compensation and power quality applications.</p>
       <ul class="value-list">
-        <li>Technical support from design phase to commissioning</li>
-        <li>Complete datasheets and compliance documentation</li>
-        <li>Custom products designed to your specifications</li>
-        <li>Type tested products across the full range</li>
-        <li>Engineering support for non-standard configurations</li>
-        <li>Installation manuals and technical guides included</li>
+        <li>Support from design phase through to commissioning</li>
+        <li>Complete datasheets, test reports and compliance documentation</li>
+        <li>Custom configurations designed to your specifications</li>
+        <li>Engineering support for non-standard applications</li>
       </ul>
     </div>
     <div class="value-card yellow">
-      <h3>For Procurement Teams &amp; Industrial Distributors</h3>
+      <div class="value-card-label">Procurement &amp; Distribution</div>
+      <h3>For Buyers &amp; Industrial Distributors</h3>
+      <p class="value-card-intro">Consistent quality, reliable supply and full export documentation — everything a distributor or procurement team needs to source with confidence.</p>
       <ul class="value-list">
-        <li>ISO 9001 certified manufacturer — consistent quality</li>
-        <li>CE marked and type tested across all product lines</li>
+        <li>ISO 9001 certified Italian manufacturer</li>
+        <li>CE marked across the full product range</li>
         <li>Certificate of Origin available for every shipment</li>
-        <li>Reliable supply for stocking distributors</li>
-        <li>Export documentation package available on request</li>
         <li>Dedicated commercial support for international markets</li>
       </ul>
     </div>
@@ -395,27 +409,27 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
   <div class="industries-grid">
     <div class="industry-card">
       <h3>Manufacturing Industry</h3>
-      <p>Power factor correction and harmonic filtering for production plants — reducing reactive power penalties and improving energy efficiency</p>
+      <p>Reactive power penalties, VFD distortion and mixed linear/non-linear loads are common challenges. We supply automatic PFC banks and harmonic mitigation systems sized for production environments.</p>
     </div>
     <div class="industry-card">
       <h3>Renewable Energy</h3>
-      <p>Transformers, power electronics capacitors and PFC systems for solar, wind and energy storage projects</p>
+      <p>Inverter-based systems require specific filtering and transformer solutions. We supply grid interface transformers, power electronics capacitors and reactive compensation for solar and wind installations.</p>
     </div>
     <div class="industry-card">
       <h3>Heavy Industry</h3>
-      <p>Induction heating capacitors, active harmonic filters and drive protection for steel, foundry and chemical plants</p>
+      <p>Steel plants, foundries and chemical facilities run high-power induction heating and variable speed drives. We supply induction heating capacitors, active harmonic filters and drive protection components.</p>
     </div>
     <div class="industry-card">
       <h3>Utilities &amp; Grid</h3>
-      <p>LV and MV automatic PFC switchboards for grid stability and distribution network power quality</p>
+      <p>Automatic compensation at LV and MV level, designed for network stability and distribution power quality. We supply complete switchboards for utility-grade installations.</p>
     </div>
     <div class="industry-card">
       <h3>Oil &amp; Gas</h3>
-      <p>Motor protection, dv/dt and sinewave filters, PFC systems for upstream and downstream facilities</p>
+      <p>Long motor cables, harsh environments and variable speed drives create specific protection needs. We supply dv/dt filters, sinewave filters and motor protection components for upstream and downstream facilities.</p>
     </div>
     <div class="industry-card">
       <h3>Water Treatment</h3>
-      <p>Power factor correction and motor protection for pumping stations and water treatment plants</p>
+      <p>Pumping stations and treatment plants require reliable, low-maintenance reactive power compensation. We supply automatic PFC banks and motor protection components suited to continuous operation.</p>
     </div>
   </div>
 </div></div>
@@ -423,7 +437,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 <!-- CASE STUDIES -->
 <div class="case-teaser">
   <h2>Real Projects &amp; Applications</h2>
-  <p>See how our systems have been applied in industrial plants, energy facilities and infrastructure projects across 40+ countries.</p>
+  <p>See how our systems have been applied across industrial plants, energy projects and infrastructure installations in 40+ countries.</p>
   <a href="/projects" class="btn-white-outline">View Case Studies</a>
 </div>
 
@@ -431,24 +445,31 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 <div class="mid-cta">
   <div>
     <p>Have a project in mind?
-      <span>Send us your specifications and our technical team will get back to you.</span>
+      <span>Send us your specifications and we will come back to you with a technical proposal.</span>
     </p>
   </div>
   <div class="mid-cta-btns">
     <a href="/contact" class="btn-primary" style="font-size:13px;padding:12px 24px">Send Your Specifications</a>
-    <a href="/contact" class="btn-secondary" style="font-size:13px;padding:12px 24px">Request a Quote</a>
+    <a href="/catalogue" class="btn-secondary" style="font-size:13px;padding:12px 24px">Download Catalogue</a>
   </div>
 </div>
 
 <!-- EXPORT -->
 <div class="section-alt-wrap"><div class="section-alt">
   <div class="section-label">GLOBAL SUPPLY</div>
-  <h2>Export Ready — Supplying 40+ Countries Worldwide</h2>
-  <p style="font-size:13px;color:#4A6080;line-height:1.7;margin-bottom:8px">We supply industrial power components to panel builders, EPC contractors and distributors across Europe, the Middle East, GCC, South America and Asia — with full technical and commercial support.</p>
-  <p style="font-size:12px;color:#1A4F96;font-weight:600;margin-bottom:28px">CE marked · IEC/EN compliant · Certificate of Origin available · ISO 9001 certified</p>
+  <h2>Export Ready — 40+ Countries Worldwide</h2>
   <div class="export-grid">
+    <div class="export-box">
+      <h4>Documentation &amp; Logistics</h4>
+      <div class="export-item">CE marking and compliance documentation for all products</div>
+      <div class="export-item">Certificate of Origin available for every shipment</div>
+      <div class="export-item">Flexible Incoterms — EXW, FOB, CIF, DAP</div>
+      <div class="export-item">Packaging designed for international transport</div>
+      <div class="export-item">Technical support for overseas installation teams</div>
+      <div class="export-item">Market-specific documentation available on request</div>
+    </div>
     <div>
-      <div style="font-size:13px;font-weight:700;color:#0D2E5A;margin-bottom:12px">Active export markets:</div>
+      <p style="font-size:13px;color:#4A6080;line-height:1.7;margin-bottom:20px">We supply panel builders, EPC contractors and distributors across Europe, the Middle East, GCC, South America and Asia. Our products meet CE and IEC/EN requirements — making them suitable for a wide range of international regulatory frameworks.</p>
       <div class="export-markets">
         <div class="market-tag">Europe</div>
         <div class="market-tag">Middle East</div>
@@ -457,17 +478,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
         <div class="market-tag">South America</div>
         <div class="market-tag">Asia</div>
       </div>
-      <p style="font-size:13px;color:#5A6A7A;line-height:1.7">Our products are CE marked and IEC/EN compliant, ready for international projects across different regulatory frameworks. We handle the full export documentation package on request.</p>
-      <a href="/export" class="btn-primary" style="margin-top:24px;font-size:13px;padding:12px 24px;display:inline-block">Learn About Export Support</a>
-    </div>
-    <div class="export-box">
-      <h4>Export Documentation &amp; Logistics</h4>
-      <div class="export-item">CE marking and IEC/EN compliance documentation</div>
-      <div class="export-item">Certificate of Origin for all shipments</div>
-      <div class="export-item">Flexible Incoterms — EXW, FOB, CIF, DAP</div>
-      <div class="export-item">Packaging for international shipping</div>
-      <div class="export-item">Technical support for overseas installation teams</div>
-      <div class="export-item">Market-specific documentation on request</div>
+      <a href="/export" class="btn-primary" style="font-size:13px;padding:12px 24px;display:inline-block">Learn About Export Support</a>
     </div>
   </div>
 </div></div>
@@ -516,13 +527,9 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
       <h4>Support</h4>
       <a href="/documentation">Documentation</a>
       <a href="/faq">FAQ</a>
-      <a href="/contact">Custom Products</a>
+      <a href="/catalogue">Product Catalogue</a>
       <a href="/contact">Contact</a>
     </div>
-  </div>
-  <div class="footer-keywords">
-    <div class="footer-keywords-label">Keywords:</div>
-    power factor correction · harmonic filters · detuned reactors · LV capacitors · MV capacitors · active harmonic filters · Italian electrical manufacturer · IEC/EN certified components · CE marked capacitors · induction heating capacitors · drive protection components · transformer manufacturer Italy
   </div>
   <div class="footer-bottom">
     <a href="/privacy">Privacy Policy</a>
