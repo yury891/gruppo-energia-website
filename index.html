@@ -52,7 +52,8 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 .hero-label{font-size:11px;color:#1A4F96;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
 .hero h1{font-size:26px;font-weight:800;color:#0D2E5A;line-height:1.35;margin-bottom:10px}
 .hero-subtitle{font-size:13px;color:#1A4F96;font-weight:600;letter-spacing:1px;margin-bottom:16px}
-.hero-sub{font-size:14px;color:#4A6080;line-height:1.7;margin-bottom:20px}
+.hero-sub{font-size:14px;color:#4A6080;line-height:1.7;margin-bottom:12px}
+.hero-value-line{font-size:12px;color:#1A4F96;font-weight:600;margin-bottom:20px}
 .hero-targets{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
 .target-tag{background:#fff;border:1px solid #D0D8E8;border-radius:20px;padding:5px 14px;font-size:11px;color:#1A4F96;font-weight:600;text-decoration:none;transition:all 0.2s}
 .target-tag:hover{background:#1A4F96;color:#fff;border-color:#1A4F96}
@@ -61,13 +62,14 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 .btn-primary:hover{background:#e6b800;border-color:#e6b800}
 .btn-secondary{background:transparent;color:#1A4F96;font-size:14px;font-weight:600;padding:14px 24px;border-radius:4px;border:2px solid #1A4F96;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;transition:all 0.2s}
 .btn-secondary:hover{background:#1A4F96;color:#fff}
+.btn-tertiary{background:transparent;color:#0D2E5A;font-size:14px;font-weight:600;padding:14px 24px;border-radius:4px;border:2px solid #0D2E5A;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;transition:all 0.2s}
+.btn-tertiary:hover{background:#0D2E5A;color:#fff}
 .hero-image{background:#1A4F96;border-radius:8px;height:300px;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .hero-image img{width:100%;height:100%;object-fit:cover;border-radius:8px}
 .hero-image-placeholder{color:rgba(255,255,255,0.4);font-size:12px;text-align:center;padding:20px;line-height:1.8}
 .trust-bar{background:#1A4F96;padding:14px 40px;display:flex;gap:20px;justify-content:center;flex-wrap:wrap;align-items:center}
 .trust-item{color:#fff;font-size:12px;font-weight:500;display:flex;align-items:center;gap:8px}
 .trust-dot{width:6px;height:6px;background:#F5C500;border-radius:50%;flex-shrink:0}
-.trust-item.highlight{color:#F5C500;font-weight:700;font-size:13px}
 .kpi-bar{background:#0D2E5A;padding:32px 40px;display:flex;justify-content:center}
 .kpi-item{flex:1;text-align:center;border-right:1px solid rgba(255,255,255,0.12);padding:0 24px}
 .kpi-item:last-child{border-right:none}
@@ -109,11 +111,6 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 .industry-card{background:#F4F7FB;border-radius:6px;padding:20px;border-bottom:3px solid #1A4F96}
 .industry-card h3{font-size:14px;font-weight:700;color:#0D2E5A;margin-bottom:8px}
 .industry-card p{font-size:12px;color:#5A6A7A;line-height:1.6}
-.case-teaser{background:#1A4F96;padding:48px 40px;text-align:center}
-.case-teaser h2{font-size:22px;font-weight:800;color:#fff;margin-bottom:12px}
-.case-teaser p{font-size:14px;color:rgba(255,255,255,0.8);margin-bottom:24px;line-height:1.6;max-width:560px;margin-left:auto;margin-right:auto}
-.btn-white-outline{background:transparent;color:#fff;font-size:14px;font-weight:700;padding:14px 28px;border-radius:4px;border:2px solid #fff;text-decoration:none;display:inline-block;transition:all 0.2s}
-.btn-white-outline:hover{background:#fff;color:#1A4F96}
 .export-box{background:#fff;border-radius:8px;padding:28px;border:1px solid #D0D8E8;max-width:600px}
 .export-box h4{font-size:11px;font-weight:700;color:#1A4F96;margin-bottom:20px;letter-spacing:1px;text-transform:uppercase;padding-bottom:12px;border-bottom:1px solid #F0F4FA}
 .export-item{font-size:13px;color:#4A6080;padding:10px 0;border-bottom:1px solid #F4F7FB;display:flex;align-items:center;gap:12px;line-height:1.5}
@@ -160,7 +157,6 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
   .kpi-bar{flex-wrap:wrap;padding:24px 20px}
   .kpi-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.12);padding:16px 12px;min-width:45%}
   .kpi-item:last-child{border-bottom:none}
-  .case-teaser{padding:40px 20px}
   .footer-copy{margin-left:0;margin-top:8px}
   .export-box{max-width:100%}
 }
@@ -171,7 +167,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
   .industries-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   .hero-btns{flex-direction:column}
-  .btn-primary,.btn-secondary{width:100%;justify-content:center}
+  .btn-primary,.btn-secondary,.btn-tertiary{width:100%;justify-content:center}
   .kpi-item{min-width:100%}
 }
 </style>
@@ -207,10 +203,11 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 
 <section class="hero">
   <div>
-    <div class="hero-label">CAPACITOR BANKS · HARMONIC FILTERS · TRANSFORMERS · DRIVE COMPONENTS</div>
+    <div class="hero-label">LV &amp; MV POWER FACTOR CORRECTION · HARMONIC FILTERS · TRANSFORMERS · DRIVE COMPONENTS</div>
     <h1>LV &amp; MV Power Factor Correction and Harmonic Filtering Solutions for Industrial Applications</h1>
     <p class="hero-subtitle">Designed and Manufactured in Italy</p>
-    <p class="hero-sub">We design and build capacitor banks, detuned reactors, harmonic filters, transformers and drive protection components. We support panel builders, EPC contractors and distributors from specification to commissioning.</p>
+    <p class="hero-sub">We support panel builders, EPC contractors and industrial distributors with reliable technical guidance, custom configurations and export-ready supply for international projects.</p>
+    <p class="hero-value-line">From specification to commissioning. Not just supply.</p>
     <div class="hero-targets">
       <a href="/applications/panel-builders" class="target-tag">Panel Builders →</a>
       <a href="/applications/epc-contractors" class="target-tag">EPC Contractors →</a>
@@ -219,6 +216,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
     <div class="hero-btns">
       <a href="/contact" class="btn-primary">Send Your Specifications</a>
       <a href="/catalogue" class="btn-secondary">Download Catalogue</a>
+      <a href="/products" class="btn-tertiary">Explore Products</a>
     </div>
   </div>
   <div class="hero-image">
@@ -232,10 +230,9 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 </section>
 
 <div class="trust-bar">
-  <div class="trust-item highlight"><div class="trust-dot"></div>Est. 1999</div>
   <div class="trust-item"><div class="trust-dot"></div>ISO 9001 Certified</div>
-  <div class="trust-item"><div class="trust-dot"></div>CE Marked — Full Range</div>
-  <div class="trust-item"><div class="trust-dot"></div>Type Tested Products</div>
+  <div class="trust-item"><div class="trust-dot"></div>CE Marked Products</div>
+  <div class="trust-item"><div class="trust-dot"></div>Type Tested Solutions Available</div>
   <div class="trust-item"><div class="trust-dot"></div>Made in Italy</div>
   <div class="trust-item"><div class="trust-dot"></div>Certificate of Origin Available</div>
   <div class="trust-item"><div class="trust-dot"></div>Export Ready</div>
@@ -248,69 +245,69 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
   </div>
   <div class="kpi-item">
     <div class="kpi-number">40+</div>
-    <div class="kpi-label">Countries Served</div>
+    <div class="kpi-label">Countries Served in Industrial Projects</div>
   </div>
   <div class="kpi-item">
     <div class="kpi-number">1,400+</div>
-    <div class="kpi-label">Installations Worldwide</div>
+    <div class="kpi-label">Industrial Installations Worldwide</div>
   </div>
 </div>
 
 <div class="section-wrap"><div class="section">
   <div class="section-label">OUR PRODUCT LINES</div>
   <h2>8 Product Families, 47 Types — Components, Assemblies and Complete Switchboards</h2>
-  <p class="section-sub">Every product is CE marked and covered by full technical documentation. Custom configurations are available across all families.</p>
+  <p class="section-sub">A complete product range for reactive power compensation, harmonic mitigation, transformer applications and drive protection in industrial power systems.</p>
   <div class="products-grid">
     <div class="product-card">
       <h3>LV Power Factor Correction</h3>
-      <p>Capacitor banks, detuned reactors, PFC controllers, contactors and automatic switchboards</p>
+      <p>Capacitor banks, detuned reactors, controllers and switching devices for automatic reactive power compensation in industrial LV networks.</p>
       <div class="product-count">10 product types</div>
       <a href="/products/lv-power-factor-correction" class="product-link">View Products →</a>
     </div>
     <div class="product-card">
       <h3>MV Power Factor Correction</h3>
-      <p>MV capacitor banks, detuned reactors, vacuum contactors, MV switchboards and protection</p>
+      <p>MV capacitor banks, reactors, switching and protection solutions for medium-voltage compensation systems and utility-grade installations.</p>
       <div class="product-count">8 product types</div>
       <a href="/products/mv-power-factor-correction" class="product-link">View Products →</a>
     </div>
     <div class="product-card accent">
       <h3>Power Electronics Capacitors</h3>
-      <p>DC-Link, AC/DC with internal safety device, 3-phase HF filter, heavy current and low inductance types</p>
+      <p>Capacitors for DC-Link, AC/DC conversion, HF filtering and heavy-current applications in power electronics and converter-based systems.</p>
       <div class="product-count">6 product types</div>
       <a href="/products/power-electronics-capacitors" class="product-link">View Products →</a>
     </div>
     <div class="product-card accent">
       <h3>Induction Heating Capacitors</h3>
-      <p>Air cooled and water cooled capacitors for induction heating and melting systems</p>
+      <p>Air-cooled and water-cooled capacitors for induction heating and melting equipment operating under demanding industrial conditions.</p>
       <div class="product-count">2 product types</div>
       <a href="/products/induction-heating-capacitors" class="product-link">View Products →</a>
     </div>
     <div class="product-card">
       <h3>Power Quality &amp; Harmonics</h3>
-      <p>Line reactors, passive and active harmonic filters for THD reduction in industrial networks</p>
+      <p>Line reactors, passive filters and active harmonic filters for networks with high non-linear loads, VFDs and harmonic distortion issues.</p>
       <div class="product-count">3 product types</div>
       <a href="/products/power-quality-harmonics" class="product-link">View Products →</a>
     </div>
     <div class="product-card">
       <h3>Motor Protection &amp; Drive Components</h3>
-      <p>Load reactors, dv/dt filters and sinewave filters for VFD and inverter protection</p>
+      <p>Load reactors, dv/dt filters and sinewave filters for inverter-fed motors, long cable runs and drive protection applications.</p>
       <div class="product-count">3 product types</div>
       <a href="/products/motor-protection-drive-components" class="product-link">View Products →</a>
     </div>
     <div class="product-card accent">
       <h3>Transformers &amp; Voltage Regulation</h3>
-      <p>Isolating, dry-type, eco-design, medical and renewable energy transformers, voltage stabilizers</p>
+      <p>Isolation transformers, dry-type transformers, voltage stabilizers and special transformer solutions for industrial, medical and renewable applications.</p>
       <div class="product-count">9 product types</div>
       <a href="/products/transformers-voltage-regulation" class="product-link">View Products →</a>
     </div>
     <div class="product-card accent">
       <h3>Motor &amp; Lighting Capacitors</h3>
-      <p>Motor run, motor start and lighting capacitors — plastic and aluminium case</p>
+      <p>Motor run, motor start and lighting capacitors for OEMs, machinery manufacturers and general electrical applications.</p>
       <div class="product-count">6 product types</div>
       <a href="/products/motor-lighting-capacitors" class="product-link">View Products →</a>
     </div>
   </div>
-  <div class="products-footer">Need something outside the standard range? We design custom configurations to your project specifications. Contact our technical team.</div>
+  <div class="products-footer">Need a non-standard solution? We support custom configurations based on project specifications, application requirements and technical constraints.</div>
 </div></div>
 
 <div class="mid-image">
@@ -323,28 +320,30 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 <div class="section-alt-wrap"><div class="section-alt">
   <div class="section-label">WHY GRUPPO ENERGIA</div>
   <h2>More Than a Component Supplier</h2>
-  <p class="value-intro">In international projects, buyers often need more than a catalogue. They need reliable documentation, consistent technical communication and a supplier who understands the full project lifecycle from design through to commissioning.</p>
+  <p class="value-intro">In industrial and international projects, selecting the right supplier is not only about products. It requires reliable technical support, clear documentation and a partner who understands application requirements from design to commissioning.</p>
   <div class="value-grid">
     <div class="value-card">
       <div class="value-card-label">Technical Teams</div>
       <h3>For Engineers, Panel Builders &amp; EPC Contractors</h3>
-      <p class="value-card-intro">We work directly with design teams as a technical reference for reactive power compensation and power quality applications.</p>
+      <p class="value-card-intro">We work directly with engineering teams as a technical reference for reactive power compensation and power quality solutions.</p>
       <ul class="value-list">
-        <li>Support from design phase through to commissioning</li>
-        <li>Complete datasheets, test reports and compliance documentation</li>
-        <li>Custom configurations designed to your specifications</li>
-        <li>Engineering support for non-standard applications</li>
+        <li>Support in capacitor bank sizing and reactive power compensation design</li>
+        <li>Guidance in harmonic analysis and filter selection (passive and active)</li>
+        <li>Technical support for detuned systems and non-linear load applications</li>
+        <li>Custom configurations developed based on project specifications</li>
+        <li>Assistance during commissioning and troubleshooting phases</li>
       </ul>
     </div>
     <div class="value-card yellow">
       <div class="value-card-label">Procurement &amp; Distribution</div>
       <h3>For Buyers &amp; Industrial Distributors</h3>
-      <p class="value-card-intro">Consistent quality, reliable supply and full export documentation — everything needed to source with confidence.</p>
+      <p class="value-card-intro">We provide consistent product quality, reliable supply and complete documentation to support procurement processes in international markets.</p>
       <ul class="value-list">
-        <li>ISO 9001 certified Italian manufacturer</li>
-        <li>CE marked across the full product range</li>
-        <li>Certificate of Origin available for every shipment</li>
-        <li>Dedicated commercial support for international markets</li>
+        <li>ISO 9001 certified manufacturing with controlled production processes</li>
+        <li>CE marked products with available technical documentation and test reports</li>
+        <li>Certificate of Origin and export documentation available for each shipment</li>
+        <li>Stable supply for standard and project-based orders</li>
+        <li>Dedicated commercial support for international customers and partners</li>
       </ul>
     </div>
   </div>
@@ -353,61 +352,55 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 <div class="section-wrap"><div class="section">
   <div class="section-label">SECTORS</div>
   <h2>Industries We Serve</h2>
-  <p class="section-sub">Our systems are installed in industrial plants, energy facilities and infrastructure projects across Europe, the Middle East, GCC and beyond.</p>
+  <p class="section-sub">Our solutions are used in industrial plants, infrastructure and energy systems where reactive power compensation, harmonic mitigation and reliable operation are critical.</p>
   <div class="industries-grid">
     <div class="industry-card">
       <h3>Manufacturing Industry</h3>
-      <p>Reactive power penalties, VFD distortion and mixed linear/non-linear loads are common challenges. We supply automatic PFC banks and harmonic mitigation systems sized for production environments.</p>
+      <p>Industrial plants typically operate with mixed linear and non-linear loads, including VFDs and automation systems. We supply automatic power factor correction systems and harmonic mitigation solutions to reduce penalties, stabilize voltage and improve overall power quality.</p>
     </div>
     <div class="industry-card">
       <h3>Renewable Energy</h3>
-      <p>Inverter-based systems require specific filtering and transformer solutions. We supply grid interface transformers, power electronics capacitors and reactive compensation for solar and wind installations.</p>
+      <p>Inverter-based systems introduce harmonics and require stable grid interface solutions. We supply transformers, power electronics capacitors and compensation systems for solar and wind installations, supporting reliable integration into the electrical network.</p>
     </div>
     <div class="industry-card">
       <h3>Heavy Industry</h3>
-      <p>Steel plants, foundries and chemical facilities run high-power induction heating and variable speed drives. We supply induction heating capacitors, active harmonic filters and drive protection components.</p>
+      <p>Steel plants, foundries and process industries operate high-power equipment such as induction furnaces and large drives. We supply induction heating capacitors, harmonic filters and protection components designed for high current and demanding operating conditions.</p>
     </div>
     <div class="industry-card">
       <h3>Utilities &amp; Grid</h3>
-      <p>Automatic compensation at LV and MV level, designed for network stability and distribution power quality. We supply complete switchboards for utility-grade installations.</p>
+      <p>Power distribution systems require stable voltage and controlled reactive power at LV and MV levels. We supply capacitor banks, reactors and complete compensation systems for utility and network applications.</p>
     </div>
     <div class="industry-card">
       <h3>Oil &amp; Gas</h3>
-      <p>Long motor cables, harsh environments and variable speed drives create specific protection needs. We supply dv/dt filters, sinewave filters and motor protection components for upstream and downstream facilities.</p>
+      <p>Facilities in oil and gas environments use variable speed drives, long motor cables and operate under harsh conditions. We supply dv/dt filters, sinewave filters and protection components to improve reliability and extend equipment lifetime.</p>
     </div>
     <div class="industry-card">
       <h3>Water Treatment</h3>
-      <p>Pumping stations and treatment plants require reliable, low-maintenance reactive power compensation. We supply automatic PFC banks and motor protection components suited to continuous operation.</p>
+      <p>Water and wastewater plants rely on continuous operation of pumps and motors. We supply automatic compensation systems and motor protection components to ensure stable operation and reduced maintenance.</p>
     </div>
   </div>
 </div></div>
 
-<div class="case-teaser">
-  <h2>Real Projects &amp; Applications</h2>
-  <p>See how our systems have been applied across industrial plants, energy projects and infrastructure installations in 40+ countries.</p>
-  <a href="/projects" class="btn-white-outline">View Case Studies</a>
-</div>
-
 <div class="section-alt-wrap"><div class="section-alt">
   <div class="section-label">GLOBAL SUPPLY</div>
   <h2>Export Ready — 40+ Countries Worldwide</h2>
-  <p style="font-size:13px;color:#4A6080;line-height:1.7;margin-bottom:28px">We supply panel builders, EPC contractors and distributors across Europe, the Middle East, GCC, South America and Asia.</p>
+  <p style="font-size:13px;color:#4A6080;line-height:1.7;margin-bottom:28px">We support panel builders, EPC contractors and industrial distributors in international markets with export-ready supply, technical documentation and commercial coordination for project-based and standard orders.</p>
   <div class="export-box">
     <h4>Available Export Documentation</h4>
     <div class="export-item">Full export documentation package available on request</div>
     <div class="export-item">Flexible Incoterms: EXW, FOB, CIF, DAP</div>
-    <div class="export-item">Packaging designed for international transport</div>
-    <div class="export-item">Technical support available for overseas installation teams</div>
+    <div class="export-item">Packaging suitable for international transport</div>
+    <div class="export-item">Technical and commercial support for overseas customers</div>
     <div class="export-item">Market-specific documentation available on request</div>
   </div>
 </div></div>
 
 <section class="cta-banner">
   <div>
-    <h2>Ready to Start Your Project?</h2>
-    <p>Our technical team works with panel builders, EPC contractors and distributors worldwide from the first specification to final commissioning.</p>
+    <h2>Start Your Project with Technical Support</h2>
+    <p>Send us your project specifications and we will support you in product selection, sizing and configuration. We work with panel builders, EPC contractors and industrial distributors from initial design through to commissioning.</p>
   </div>
-  <a href="/contact" class="cta-btn-white">Contact Us</a>
+  <a href="/contact" class="cta-btn-white">Send Your Specifications</a>
 </section>
 
 <footer class="footer">
