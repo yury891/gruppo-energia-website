@@ -53,10 +53,13 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 .section-alt-wrap{background:#F4F7FB;border-top:1px solid #D0D8E8;border-bottom:1px solid #D0D8E8}
 .section{padding:56px 40px;max-width:1280px;margin:0 auto}
 .section-label{font-size:11px;color:#1A4F96;font-weight:700;letter-spacing:2px;margin-bottom:10px;text-transform:uppercase}
-.section h2{font-size:20px;font-weight:800;color:#0D2E5A;margin-bottom:16px;line-height:1.4}
-.intro-text{font-size:14px;color:#4A6080;line-height:1.75;margin-bottom:12px;max-width:860px}
-.geo-text{font-size:13px;color:#1A4F96;font-weight:500;line-height:1.6;margin-bottom:0;max-width:860px;padding-top:12px;border-top:1px solid #E8ECF4;margin-top:4px}
-.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:20px}
+.section h2{font-size:20px;font-weight:800;color:#0D2E5A;margin-bottom:12px;line-height:1.4}
+.section-orient{font-size:13px;color:#5A6A7A;line-height:1.6;margin-bottom:24px;max-width:700px}
+.intro-block{margin-bottom:0}
+.intro-text{font-size:14px;color:#4A6080;line-height:1.75;margin-bottom:10px;max-width:860px}
+.geo-text{font-size:13px;color:#1A4F96;font-weight:500;line-height:1.6;max-width:860px}
+.product-count-line{font-size:11px;color:#8A9AB0;font-weight:600;letter-spacing:1px;margin-bottom:12px;text-transform:uppercase}
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:0}
 .product-card{border:1px solid #D0D8E8;border-top:3px solid #1A4F96;border-radius:4px;padding:20px;transition:box-shadow 0.2s;display:flex;flex-direction:column;text-decoration:none}
 .product-card:hover{box-shadow:0 4px 16px rgba(26,79,150,0.1);border-top-color:#F5C500}
 .product-card.accent{border-top-color:#F5C500}
@@ -65,11 +68,18 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 .product-card p{font-size:11px;color:#5A6A7A;line-height:1.6;margin-bottom:12px;flex:1}
 .product-count{font-size:10px;color:#8A9AB0;margin-bottom:12px;font-style:italic}
 .product-link{font-size:12px;color:#1A4F96;font-weight:700;text-decoration:none;margin-top:auto}
+.app-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.app-item{padding:18px 20px;border:1px solid #D0D8E8;border-radius:4px;border-left:3px solid #1A4F96}
+.app-item h3{font-size:13px;font-weight:700;color:#0D2E5A;margin-bottom:6px}
+.app-item p{font-size:12px;color:#5A6A7A;line-height:1.55}
 .mini-cta{background:#0D2E5A;padding:48px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px}
 .mini-cta-text p{font-size:18px;font-weight:700;color:#fff;margin-bottom:6px}
 .mini-cta-text span{font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6;display:block;max-width:500px}
-.btn-primary{background:#F5C500;color:#1A4F96;font-size:14px;font-weight:700;padding:14px 28px;border-radius:4px;border:2px solid #F5C500;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;transition:all 0.2s;white-space:nowrap}
+.mini-cta-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:#F5C500;color:#1A4F96;font-size:14px;font-weight:700;padding:14px 24px;border-radius:4px;border:2px solid #F5C500;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;transition:all 0.2s;white-space:nowrap}
 .btn-primary:hover{background:#e6b800;border-color:#e6b800}
+.btn-secondary{background:transparent;color:#fff;font-size:14px;font-weight:600;padding:14px 24px;border-radius:4px;border:2px solid rgba(255,255,255,0.6);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;transition:all 0.2s;white-space:nowrap}
+.btn-secondary:hover{border-color:#fff;background:rgba(255,255,255,0.1)}
 .footer{background:#F4F7FB;padding:56px 40px 24px;border-top:3px solid #1A4F96}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px}
 .footer-logo{margin-bottom:6px}
@@ -85,7 +95,11 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 .footer-bottom a{font-size:11px;color:#8A9AB0;text-decoration:none}
 .footer-bottom a:hover{color:#1A4F96}
 .footer-copy{font-size:11px;color:#8A9AB0;margin-left:auto}
-@media(max-width:1024px){.products-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:1024px){
+  .products-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .app-grid{grid-template-columns:repeat(2,1fr)}
+}
 @media(max-width:900px){
   .navbar{padding:0 20px;height:72px}.navbar-menu{display:none}.navbar-hamburger{display:flex}
   .breadcrumb{padding:10px 20px}
@@ -96,8 +110,11 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 }
 @media(max-width:600px){
   .products-grid{grid-template-columns:1fr}
+  .app-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   .page-hero h1{font-size:20px}
+  .mini-cta-btns{flex-direction:column;width:100%}
+  .btn-primary,.btn-secondary{width:100%;justify-content:center}
 }
 </style>
 </head>
@@ -143,12 +160,17 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 
 <div class="section-wrap"><div class="section">
   <div class="section-label">INDUSTRIAL PRODUCT RANGE</div>
-  <p class="intro-text">Our product portfolio covers low-voltage and medium-voltage power factor correction systems, harmonic filtering solutions, transformers and drive protection components. These solutions are used in industrial plants, infrastructure and energy systems where stable operation, reduced losses and compliance with power quality requirements are essential.</p>
-  <p class="geo-text">Gruppo Energia manufactures industrial electrical components in Italy and supplies panel builders, EPC contractors and industrial distributors across Europe, the Middle East, GCC and Asia.</p>
+  <div class="intro-block">
+    <p class="intro-text">Our product portfolio covers low-voltage and medium-voltage power factor correction systems, harmonic filtering solutions, transformers and drive protection components. These solutions are used in industrial plants, infrastructure and energy systems where stable operation, reduced losses and compliance with power quality requirements are essential.</p>
+    <p class="geo-text">Gruppo Energia manufactures industrial electrical components in Italy and supplies panel builders, EPC contractors and industrial distributors across Europe, the Middle East, GCC and Asia.</p>
+  </div>
 </div></div>
 
 <div class="section-alt-wrap"><div class="section">
   <div class="section-label">PRODUCT FAMILIES</div>
+  <div class="product-count-line">8 Product Families — 47 Product Types</div>
+  <h2>Explore Our Product Families</h2>
+  <p class="section-orient">Select a product family to explore components, assemblies and complete systems for your application.</p>
   <div class="products-grid">
     <a href="/products/lv-power-factor-correction" class="product-card">
       <h3>LV Power Factor Correction</h3>
@@ -201,12 +223,46 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
   </div>
 </div></div>
 
+<div class="section-wrap"><div class="section">
+  <div class="section-label">APPLICATION CONTEXT</div>
+  <h2>Typical Applications</h2>
+  <div class="app-grid">
+    <div class="app-item">
+      <h3>Industrial Manufacturing Plants</h3>
+      <p>Reactive power compensation and harmonic mitigation for production environments.</p>
+    </div>
+    <div class="app-item">
+      <h3>Power Distribution &amp; Utilities</h3>
+      <p>LV and MV solutions for stable operation and controlled reactive power.</p>
+    </div>
+    <div class="app-item">
+      <h3>Renewable Energy Systems</h3>
+      <p>Components and systems for inverter-based networks and grid integration.</p>
+    </div>
+    <div class="app-item">
+      <h3>Water &amp; Wastewater Treatment</h3>
+      <p>Reliable compensation and motor-related solutions for continuous-duty plants.</p>
+    </div>
+    <div class="app-item">
+      <h3>Heavy Industry &amp; Process Plants</h3>
+      <p>Solutions for demanding loads, high currents and industrial power quality issues.</p>
+    </div>
+    <div class="app-item">
+      <h3>OEM Machinery &amp; Automation</h3>
+      <p>Electrical components for machine builders, skids and automated systems.</p>
+    </div>
+  </div>
+</div></div>
+
 <div class="mini-cta">
   <div class="mini-cta-text">
     <p>Not sure which solution you need?</p>
     <span>Send us your specifications and we will help you identify the most suitable product family for your project.</span>
   </div>
-  <a href="/contact" class="btn-primary">Send Your Specifications</a>
+  <div class="mini-cta-btns">
+    <a href="/contact" class="btn-primary">Send Your Specifications</a>
+    <a href="/catalogue" class="btn-secondary">Download Catalogue</a>
+  </div>
 </div>
 
 <footer class="footer">
