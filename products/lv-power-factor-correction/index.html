@@ -52,6 +52,8 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 .page-hero p{font-size:15px;color:#4A6080;line-height:1.75;max-width:640px}
 .banner-image{width:100%;height:300px;overflow:hidden;display:block}
 .banner-image img{width:100%;height:100%;object-fit:cover;object-position:center 58%}
+
+/* Intro section */
 .section-wrap{background:#fff}
 .section-alt-wrap{background:#F4F7FB;border-top:1px solid #D0D8E8;border-bottom:1px solid #D0D8E8}
 .section{padding:56px 40px;max-width:1280px;margin:0 auto}
@@ -59,12 +61,33 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 .section h2{font-size:20px;font-weight:800;color:#0D2E5A;margin-bottom:16px;line-height:1.4}
 .intro-text{font-size:15px;color:#4A6080;line-height:1.75;margin-bottom:14px;max-width:860px}
 .geo-text{font-size:13px;color:#1A4F96;font-weight:500;line-height:1.65;max-width:860px;padding-top:12px;border-top:1px solid #E8ECF4;margin-top:4px}
-.product-types-list{display:flex;flex-direction:column;gap:12px}
-.product-type-card{border:1px solid #D0D8E8;border-left:4px solid #1A4F96;border-radius:4px;padding:20px 24px}
-.product-type-card h3{font-size:14px;font-weight:700;color:#0D2E5A;margin-bottom:8px;line-height:1.4}
-.product-type-card .desc{font-size:13px;color:#4A6080;line-height:1.65;margin-bottom:10px}
-.product-type-card .app{font-size:13px;color:#6A7A8A;line-height:1.65;padding-top:8px;border-top:1px solid #F0F4FA}
-.product-type-card .app::before{content:"Application: ";font-weight:600;font-style:normal;color:#1A4F96}
+
+/* Product range layout */
+.range-section{padding:56px 40px;max-width:1280px;margin:0 auto}
+.range-subsection{margin-bottom:48px}
+.range-subsection:last-child{margin-bottom:0}
+.subsection-header{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-bottom:14px;border-bottom:2px solid #1A4F96}
+.subsection-icon{width:36px;height:36px;background:#1A4F96;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.subsection-icon svg{width:18px;height:18px;fill:#fff}
+.subsection-title{font-size:17px;font-weight:800;color:#0D2E5A;line-height:1.3}
+.subsection-subtitle{font-size:13px;color:#4A6080;margin-top:2px;line-height:1.5}
+
+/* Compact card grid */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.pcard{border:1px solid #D0D8E8;border-left:3px solid #1A4F96;border-radius:4px;padding:16px 18px;background:#fff;transition:box-shadow 0.15s,border-left-color 0.15s}
+.pcard:hover{box-shadow:0 2px 10px rgba(26,79,150,0.09);border-left-color:#F5C500}
+.pcard h3{font-size:13px;font-weight:700;color:#0D2E5A;margin-bottom:6px;line-height:1.4}
+.pcard .desc{font-size:12px;color:#4A6080;line-height:1.6;margin-bottom:8px}
+.pcard .app-tag{display:inline-block;font-size:11px;color:#1A4F96;background:#EEF3FA;padding:3px 8px;border-radius:3px;line-height:1.5}
+
+/* Assembled solutions — slightly more prominent cards */
+.acard{border:1px solid #D0D8E8;border-top:3px solid #0D2E5A;border-radius:4px;padding:18px 20px;background:#fff;transition:box-shadow 0.15s,border-top-color 0.15s}
+.acard:hover{box-shadow:0 2px 10px rgba(26,79,150,0.09);border-top-color:#F5C500}
+.acard h3{font-size:13px;font-weight:700;color:#0D2E5A;margin-bottom:6px;line-height:1.4}
+.acard .desc{font-size:12px;color:#4A6080;line-height:1.6;margin-bottom:8px}
+.acard .app-tag{display:inline-block;font-size:11px;color:#0D2E5A;background:#E8EDF6;padding:3px 8px;border-radius:3px;line-height:1.5}
+
+/* Related */
 .related-section{padding:40px 40px;max-width:1280px;margin:0 auto}
 .related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .related-card{border:1px solid #D0D8E8;border-top:2px solid #D0D8E8;border-radius:4px;padding:18px;text-decoration:none;transition:box-shadow 0.2s;display:block}
@@ -72,6 +95,8 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 .related-card h3{font-size:13px;font-weight:700;color:#0D2E5A;margin-bottom:6px;line-height:1.4}
 .related-card p{font-size:12px;color:#5A6A7A;line-height:1.6;margin-bottom:10px}
 .related-card span{font-size:12px;color:#1A4F96;font-weight:700}
+
+/* CTA */
 .cta-banner{background:#0D2E5A;padding:56px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px}
 .cta-banner-text h2{font-size:20px;font-weight:800;color:#fff;margin-bottom:10px}
 .cta-banner-text p{font-size:15px;color:rgba(255,255,255,0.8);line-height:1.75;max-width:500px}
@@ -80,6 +105,8 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 .btn-primary:hover{background:#e6b800;border-color:#e6b800}
 .btn-secondary{background:transparent;color:#fff;font-size:14px;font-weight:600;padding:14px 24px;border-radius:4px;border:2px solid rgba(255,255,255,0.6);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;transition:all 0.2s;white-space:nowrap}
 .btn-secondary:hover{border-color:#fff;background:rgba(255,255,255,0.1)}
+
+/* Footer */
 .footer{background:#F4F7FB;padding:56px 40px 24px;border-top:3px solid #1A4F96}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px}
 .footer-logo{margin-bottom:6px}
@@ -92,15 +119,17 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 .footer-col a{display:block;font-size:13px;color:#5A6A7A;text-decoration:none;line-height:2.2}
 .footer-col a:hover{color:#1A4F96}
 .footer-bottom{border-top:1px solid #D0D8E8;padding-top:16px;display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-top:24px}
-.footer-bottom a{font-size:12px;color:#8A9AB0;text-decoration:none;line-height:1.5}
+.footer-bottom a{font-size:12px;color:#8A9AB0;text-decoration:none}
 .footer-bottom a:hover{color:#1A4F96}
-.footer-copy{font-size:12px;color:#8A9AB0;margin-left:auto;line-height:1.5}
+.footer-copy{font-size:12px;color:#8A9AB0;margin-left:auto}
+
 @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr}.related-grid{grid-template-columns:1fr}}
 @media(max-width:900px){
   .navbar{padding:0 20px;height:72px}.navbar-menu{display:none}.navbar-hamburger{display:flex}
   .breadcrumb{padding:10px 20px}
   .page-hero{padding:36px 20px}.page-hero h1{font-size:22px}
   .section{padding:40px 20px}
+  .range-section{padding:40px 20px}
   .related-section{padding:32px 20px}
   .banner-image{height:220px}
   .cta-banner{flex-direction:column;text-align:center;padding:40px 20px}
@@ -113,10 +142,12 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
   .banner-image{height:180px}
   .cta-btns{flex-direction:column;width:100%}
   .btn-primary,.btn-secondary{width:100%;justify-content:center}
+  .cards-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
+
 <header class="navbar">
   <a href="/" class="navbar-logo">
     <img src="../../LOGO%202017%20copia.png" alt="Gruppo Energia — Italian Manufacturer">
@@ -135,6 +166,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
     <span></span><span></span><span></span>
   </button>
 </header>
+
 <nav class="mobile-menu" id="mobileMenu">
   <a href="/products" onclick="toggleMenu()">Products</a>
   <a href="/applications" onclick="toggleMenu()">Applications</a>
@@ -153,7 +185,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 <div class="page-hero">
   <div class="page-hero-inner">
     <h1>LV Power Factor Correction Solutions</h1>
-    <p>Solutions designed to improve power factor, reduce reactive energy costs and support stable operation in low-voltage industrial systems, including installations with variable loads and harmonic distortion.</p>
+    <p>Capacitors, detuned reactors, controllers and complete automatic switchboards for reactive power compensation in low-voltage industrial systems — including installations with variable loads and harmonic distortion.</p>
   </div>
 </div>
 
@@ -162,73 +194,107 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 </div>
 
 <div class="section-wrap"><div class="section">
-  <div class="section-label">LOW-VOLTAGE REACTIVE POWER COMPENSATION</div>
-  <h2>Low-Voltage Reactive Power Compensation</h2>
-  <p class="intro-text">Low-voltage power factor correction systems are used to compensate reactive power and improve efficiency in industrial installations. In networks with variable loads, automatic systems maintain stable power factor, while in systems with harmonic distortion, detuned solutions are required to prevent resonance and protect electrical equipment.</p>
+  <div class="section-label">LV REACTIVE POWER COMPENSATION</div>
+  <h2>Why LV Power Factor Correction Matters</h2>
+  <p class="intro-text">Low-voltage power factor correction systems compensate reactive power and improve efficiency in industrial installations. In networks with variable loads, automatic systems maintain stable power factor. In systems with harmonic distortion — driven by VFDs, UPS or non-linear loads — detuned solutions are required to prevent resonance and protect electrical equipment.</p>
   <p class="geo-text">Gruppo Energia manufactures LV power factor correction solutions in Italy and supplies panel builders, EPC contractors and industrial distributors across Europe, the Middle East, GCC and Asia.</p>
 </div></div>
 
-<div class="section-alt-wrap"><div class="section">
-  <div class="section-label">PRODUCT RANGE</div>
-  <h2>LV Power Factor Correction — Product Range</h2>
-  <div class="product-types-list">
-    <div class="product-type-card">
-      <h3>LV Power Factor Correction Capacitors</h3>
-      <p class="desc">Three-phase and single-phase capacitors designed for reactive power compensation in low-voltage systems.</p>
-      <p class="app">Used in industrial installations to improve power factor and reduce energy penalties.</p>
+<div class="section-alt-wrap">
+  <div class="range-section">
+
+    <!-- COMPONENTS -->
+    <div class="range-subsection">
+      <div class="subsection-header">
+        <div class="subsection-icon">
+          <svg viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zm-1-9h2v4h-2zm0 5h2v2h-2z"/></svg>
+        </div>
+        <div>
+          <div class="subsection-title">Components</div>
+          <div class="subsection-subtitle">Individual components for integration into LV switchboards and PFC systems</div>
+        </div>
+      </div>
+      <div class="cards-grid">
+        <div class="pcard">
+          <h3>LV Power Factor Correction Capacitors</h3>
+          <p class="desc">Three-phase and single-phase capacitors for reactive power compensation in low-voltage systems.</p>
+          <span class="app-tag">Industrial installations · energy penalty reduction</span>
+        </div>
+        <div class="pcard">
+          <h3>LV Detuned Harmonic Reactors</h3>
+          <p class="desc">Reactors that protect capacitor banks and prevent resonance in networks with harmonic distortion.</p>
+          <span class="app-tag">VFDs · UPS · non-linear loads</span>
+        </div>
+        <div class="pcard">
+          <h3>LV Power Factor Controllers</h3>
+          <p class="desc">Electronic regulators for automatic step-by-step control of capacitor banks based on real-time load conditions.</p>
+          <span class="app-tag">Automatic PFC systems</span>
+        </div>
+        <div class="pcard">
+          <h3>Capacitor Duty Contactors</h3>
+          <p class="desc">Contactors engineered for switching capacitors with high inrush currents — safe and reliable at every cycle.</p>
+          <span class="app-tag">Automatic capacitor banks</span>
+        </div>
+        <div class="pcard">
+          <h3>Thyristor Switching Modules</h3>
+          <p class="desc">Solid-state switching devices for fast, transient-free capacitor activation in dynamic load conditions.</p>
+          <span class="app-tag">Rapid reactive power compensation</span>
+        </div>
+        <div class="pcard">
+          <h3>LV Load Break Switches</h3>
+          <p class="desc">Switching devices for safe isolation and load disconnection in LV electrical panels and distribution boards.</p>
+          <span class="app-tag">LV switchboards · distribution boards</span>
+        </div>
+        <div class="pcard">
+          <h3>LV Fuse Links and Fuse Holders</h3>
+          <p class="desc">Protection components designed to safeguard capacitor banks and electrical equipment in PFC panels.</p>
+          <span class="app-tag">PFC panels · industrial switchboards</span>
+        </div>
+      </div>
     </div>
-    <div class="product-type-card">
-      <h3>LV Detuned Harmonic Reactors</h3>
-      <p class="desc">Reactors designed to protect capacitor banks and prevent resonance in networks with harmonic distortion.</p>
-      <p class="app">Used in systems with VFDs, UPS and non-linear loads.</p>
+
+    <!-- ASSEMBLED SOLUTIONS -->
+    <div class="range-subsection">
+      <div class="subsection-header">
+        <div class="subsection-icon" style="background:#0D2E5A">
+          <svg viewBox="0 0 20 20"><path d="M3 3h14v14H3V3zm2 2v10h10V5H5zm2 2h6v2H7V7zm0 4h6v2H7v-2z"/></svg>
+        </div>
+        <div>
+          <div class="subsection-title">Assembled Solutions</div>
+          <div class="subsection-subtitle">Complete, ready-to-install systems for panel builders, EPC contractors and end users</div>
+        </div>
+      </div>
+      <div class="cards-grid">
+        <div class="acard">
+          <h3>Automatic PFC Switchboards</h3>
+          <p class="desc">Complete low-voltage panels for automatic power factor correction with step control — available in standard and detuned configurations for networks with harmonic distortion.</p>
+          <span class="app-tag">Industrial plants · commercial facilities</span>
+        </div>
+        <div class="acard">
+          <h3>Fixed PFC Switchboards</h3>
+          <p class="desc">Fixed-compensation LV panels for installations with stable, predictable loads where step control is not required.</p>
+          <span class="app-tag">Constant load applications</span>
+        </div>
+        <div class="acard">
+          <h3>PFC Modules and Pre-Assembled Units</h3>
+          <p class="desc">Compact assemblies integrating capacitors, reactors and switching devices — designed for modular installations and OEM panel builders.</p>
+          <span class="app-tag">OEM panel builders · modular installations</span>
+        </div>
+        <div class="acard">
+          <h3>LV Static Var Generators (SVG)</h3>
+          <p class="desc">Advanced electronic systems for real-time, stepless reactive power compensation — no capacitor banks, no transients, full dynamic response.</p>
+          <span class="app-tag">Fast load variations · strict power quality requirements</span>
+        </div>
+      </div>
     </div>
-    <div class="product-type-card">
-      <h3>Capacitor Duty Contactors for PFC Systems</h3>
-      <p class="desc">Contactors specifically designed for switching capacitors with high inrush currents.</p>
-      <p class="app">Used in automatic capacitor banks for safe and reliable operation.</p>
-    </div>
-    <div class="product-type-card">
-      <h3>Thyristor Switching Modules for Capacitor Banks</h3>
-      <p class="desc">Solid-state switching devices for fast and transient-free capacitor activation.</p>
-      <p class="app">Used in dynamic loads requiring rapid reactive power compensation.</p>
-    </div>
-    <div class="product-type-card">
-      <h3>Automatic PFC Switchboards and Panels</h3>
-      <p class="desc">Complete low-voltage panels for automatic power factor correction with step control.</p>
-      <p class="app">Used as turnkey solutions in industrial plants and commercial facilities.</p>
-    </div>
-    <div class="product-type-card">
-      <h3>PFC Modules and Pre-Assembled Units</h3>
-      <p class="desc">Compact assemblies integrating capacitors, reactors and switching devices.</p>
-      <p class="app">Used for modular installations and OEM panel builders.</p>
-    </div>
-    <div class="product-type-card">
-      <h3>LV Static Var Generators (SVG)</h3>
-      <p class="desc">Advanced electronic systems for real-time reactive power compensation without capacitor steps.</p>
-      <p class="app">Used in installations with fast load variations and strict power quality requirements.</p>
-    </div>
-    <div class="product-type-card">
-      <h3>LV Load Break Switches</h3>
-      <p class="desc">Switching devices designed for safe isolation and load disconnection in LV systems.</p>
-      <p class="app">Used in electrical panels and distribution boards.</p>
-    </div>
-    <div class="product-type-card">
-      <h3>LV Fuse Links and Fuse Holders</h3>
-      <p class="desc">Protection components designed to safeguard capacitor banks and electrical equipment.</p>
-      <p class="app">Used in PFC panels and industrial switchboards.</p>
-    </div>
-    <div class="product-type-card">
-      <h3>LV Power Factor Controllers</h3>
-      <p class="desc">Electronic regulators for automatic control of capacitor steps based on load conditions.</p>
-      <p class="app">Used in PFC systems to maintain stable power factor.</p>
-    </div>
+
   </div>
-</div></div>
+</div>
 
 <div class="section-wrap"><div class="related-section">
   <div class="section-label">RELATED PRODUCT FAMILIES</div>
-  <h2 style="font-size:17px;font-weight:700;color:#0D2E5A;margin-bottom:10px;line-height:1.4">Related Product Families</h2>
-  <p style="font-size:13px;color:#5A6A7A;line-height:1.65;margin-bottom:20px">Often used together in industrial installations with reactive power compensation, harmonic mitigation and drive-based loads.</p>
+  <h2 style="font-size:17px;font-weight:700;color:#0D2E5A;margin-bottom:10px;line-height:1.4">Often Used Together</h2>
+  <p style="font-size:13px;color:#5A6A7A;line-height:1.65;margin-bottom:20px">Commonly specified alongside LV power factor correction in industrial installations with drive-based loads and harmonic mitigation requirements.</p>
   <div class="related-grid">
     <a href="/products/power-quality-harmonics" class="related-card">
       <h3>Power Quality &amp; Harmonics</h3>
