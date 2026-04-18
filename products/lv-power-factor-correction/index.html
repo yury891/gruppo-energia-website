@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LV Power Factor Correction — Capacitors, Reactors and Automatic Switchboards — Gruppo Energia</title>
-<meta name="description" content="Gruppo Energia manufactures LV power factor correction capacitors, controllers and automatic switchboards in Italy for industrial applications worldwide. Supply across Europe, the Middle East, GCC and Asia.">
+<title>LV Power Factor Correction Solutions | Capacitors, Reactors, Controllers & Switchboards | Gruppo Energia</title>
+<meta name="description" content="Italian manufacturer of LV power factor correction solutions including capacitors, detuned reactors, controllers and automatic switchboards for industrial and commercial applications.">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="LV Power Factor Correction — Gruppo Energia">
 <meta property="og:description" content="LV power factor correction capacitors, detuned reactors, controllers and automatic switchboards. Italian manufacturer. Export worldwide.">
@@ -162,7 +162,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
     <a href="/blog">Blog</a>
     <a href="/contact">Contact</a>
   </nav>
-  <button class="navbar-hamburger" onclick="toggleMenu()" aria-label="Open menu">
+  <button class="navbar-hamburger" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
     <span></span><span></span><span></span>
   </button>
 </header>
@@ -195,14 +195,16 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 
 <div class="section-wrap"><div class="section">
   <div class="section-label">LV REACTIVE POWER COMPENSATION</div>
-  <h2>Why LV Power Factor Correction Matters?</h2>
-  <p class="intro-text">Low-voltage power factor correction systems compensate reactive power and improve efficiency in industrial installations. In networks with variable loads, automatic systems maintain stable power factor. In systems with harmonic distortion, driven by VFDs, UPS or non-linear loads, detuned solutions are required to prevent resonance and protect electrical equipment.</p>
+  <h2>Why Low-Voltage Power Factor Correction Matters</h2>
+  <p class="intro-text">LV power factor correction systems compensate reactive power and improve efficiency in industrial installations. In networks with variable loads, automatic systems maintain stable power factor. In systems with harmonic distortion, driven by VFDs, UPS or non-linear loads, detuned solutions are required to prevent resonance and protect electrical equipment.</p>
   <p class="geo-text">Gruppo Energia manufactures LV power factor correction solutions in Italy and supplies panel builders, EPC contractors and industrial distributors across Europe, the Middle East, GCC and Asia.</p>
 </div></div>
 
 <div class="section-alt-wrap">
   <div class="range-section">
-
+<div class="section-label">PRODUCT RANGE</div>
+<h2 style="font-size:20px;font-weight:800;color:#0D2E5A;margin-bottom:14px;line-height:1.4">LV Power Factor Correction Product Range</h2>
+<p class="intro-text" style="margin-bottom:28px;max-width:860px">Our LV power factor correction range includes individual components for panel integration as well as complete assembled systems for industrial and commercial applications.</p>
     <!-- COMPONENTS -->
     <div class="range-subsection">
       <div class="subsection-header">
@@ -217,7 +219,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
       <div class="cards-grid">
         <div class="pcard">
           <h3>LV Power Factor Correction Capacitors</h3>
-          <p class="desc">Three-phase and single-phase capacitors for reactive power compensation in low-voltage systems.</p>
+          <p class="desc">Three-phase and single-phase capacitors for low-voltage reactive power compensation and power factor correction.</p>
           <span class="app-tag">Industrial installations · energy penalty reduction</span>
         </div>
         <div class="pcard">
@@ -232,7 +234,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
         </div>
         <div class="pcard">
           <h3>Capacitor Duty Contactors</h3>
-          <p class="desc">Contactors engineered for switching capacitors with high inrush currents — safe and reliable at every cycle.</p>
+          <p class="desc">Contactors engineered for switching capacitors with high inrush currents in automatic power factor correction systems.</p>
           <span class="app-tag">Automatic capacitor banks</span>
         </div>
         <div class="pcard">
@@ -282,7 +284,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
         </div>
         <div class="acard">
           <h3>LV Static Var Generators (SVG)</h3>
-          <p class="desc">Advanced electronic systems for real-time, stepless reactive power compensation — no capacitor banks, no transients, full dynamic response.</p>
+          <p class="desc">Advanced electronic systems for real-time, stepless reactive power compensation in installations with fast load variations and demanding power quality requirements.</p>
           <span class="app-tag">Fast load variations · strict power quality requirements</span>
         </div>
       </div>
@@ -311,8 +313,8 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 
 <div class="cta-banner">
   <div class="cta-banner-text">
-    <h2>Need support with your project?</h2>
-    <p>Send your project specifications and we will support you in product selection, sizing and configuration.</p>
+    <h2>Need Support for Your LV Power Factor Correction Project?</h2>
+    <p>Send your project specifications and we will support you in product selection, sizing and configuration of capacitors, reactors, controllers and complete switchboards.</p>
   </div>
   <div class="cta-btns">
     <a href="/contact" class="btn-primary">Send Your Specifications</a>
@@ -368,11 +370,19 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 </footer>
 
 <script>
-function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+function toggleMenu(){
+  const menu = document.getElementById('mobileMenu');
+  const button = document.querySelector('.navbar-hamburger');
+  const isOpen = menu.classList.toggle('open');
+  button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+}
 document.addEventListener('click',function(e){
   const m=document.getElementById('mobileMenu');
   const b=document.querySelector('.navbar-hamburger');
-  if(m.classList.contains('open')&&!m.contains(e.target)&&!b.contains(e.target))m.classList.remove('open');
+  if(m.classList.contains('open')&&!m.contains(e.target)&&!b.contains(e.target)){
+    m.classList.remove('open');
+    b.setAttribute('aria-expanded','false');
+  }
 });
 </script>
 </body>
