@@ -270,11 +270,11 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
       <label for="filter-voltage">Voltage</label>
       <select id="filter-voltage" onchange="renderTable()">
         <option value="400">400 V</option>
-        <option value="415" disabled>415 V (coming soon)</option>
-        <option value="440" disabled>440 V (coming soon)</option>
-        <option value="460" disabled>460 V (coming soon)</option>
-        <option value="480" disabled>480 V (coming soon)</option>
-        <option value="525" disabled>525 V (coming soon)</option>
+        <option value="415">415 V</option>
+        <option value="440">440 V</option>
+        <option value="460">460 V</option>
+        <option value="480">480 V</option>
+        <option value="525">525 V</option>
       </select>
     </div>
     <div class="filter-group">
@@ -301,7 +301,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
     </table>
   </div>
 
-  <p style="font-size:12px;color:#8A9AB0;margin-top:14px;line-height:1.6">The suffix *** in the part number is completed according to dimensions and terminal configuration. <a href="/contact" style="color:#1A4F96;font-weight:600">Contact us</a> to confirm the correct configuration for your application.</p>
+  <p class="table-disclaimer">Capacitance and current values are calculated according to selected voltage and frequency. Final dimensions and part number suffix depend on mechanical configuration and terminal type.</p>
 </div></div>
 
 <!-- 5. PART NUMBER — white -->
@@ -430,80 +430,33 @@ document.addEventListener('click',function(e){
   }
 });
 
-/* ============================================================
-   RATINGS DATA
-   Structure: ratingsData[voltage][frequency] = array of rows
-   Each row: { pn, kvar, cap, current, dim }
-   dim: string value or null (null = custom dimensions link)
-   ============================================================ */
-const ratingsData = {
-  400: {
-    50: [
-      { pn: "3PF1A400STC***",     kvar: 1,     cap: "6.63",   current: "1.44",  dim: null },
-      { pn: "3PF2,5A400STC***",   kvar: 2.5,   cap: "16.59",  current: "3.61",  dim: null },
-      { pn: "3PF3,3A400STC***",   kvar: 3.33,  cap: "22.09",  current: "4.81",  dim: null },
-      { pn: "3PF5A400STC***",     kvar: 5,     cap: "33.17",  current: "7.22",  dim: null },
-      { pn: "3PF6,25A400STC***",  kvar: 6.25,  cap: "41.47",  current: "9.02",  dim: null },
-      { pn: "3PF7,5A400STC***",   kvar: 7.5,   cap: "49.76",  current: "10.83", dim: null },
-      { pn: "3PF10A400STC***",    kvar: 10,    cap: "66.35",  current: "14.43", dim: null },
-      { pn: "3PF12,5A400STC***",  kvar: 12.5,  cap: "82.94",  current: "18.04", dim: null },
-      { pn: "3PF15A400STC***",    kvar: 15,    cap: "99.52",  current: "21.65", dim: null },
-      { pn: "3PF20A400STC***",    kvar: 20,    cap: "132.70", current: "28.87", dim: null },
-      { pn: "3PF25A400STC***",    kvar: 25,    cap: "165.87", current: "36.08", dim: null },
-      { pn: "3PF30A400STC***",    kvar: 30,    cap: "199.04", current: "43.30", dim: null },
-      { pn: "3PF40A400STC***",    kvar: 40,    cap: "265.39", current: "57.74", dim: null }
-    ],
-    60: [
-      { pn: "3PF1B400STC***",     kvar: 1,     cap: "5.53",   current: "1.44",  dim: null },
-      { pn: "3PF2,5B400STC***",   kvar: 2.5,   cap: "13.82",  current: "3.61",  dim: null },
-      { pn: "3PF3,3B400STC***",   kvar: 3.33,  cap: "18.41",  current: "4.81",  dim: null },
-      { pn: "3PF5B400STC***",     kvar: 5,     cap: "27.65",  current: "7.22",  dim: null },
-      { pn: "3PF6,25B400STC***",  kvar: 6.25,  cap: "34.56",  current: "9.02",  dim: null },
-      { pn: "3PF7,5B400STC***",   kvar: 7.5,   cap: "41.47",  current: "10.83", dim: null },
-      { pn: "3PF10B400STC***",    kvar: 10,    cap: "55.29",  current: "14.43", dim: null },
-      { pn: "3PF12,5B400STC***",  kvar: 12.5,  cap: "69.11",  current: "18.04", dim: null },
-      { pn: "3PF15B400STC***",    kvar: 15,    cap: "82.94",  current: "21.65", dim: null },
-      { pn: "3PF20B400STC***",    kvar: 20,    cap: "110.58", current: "28.87", dim: null },
-      { pn: "3PF25B400STC***",    kvar: 25,    cap: "138.23", current: "36.08", dim: null },
-      { pn: "3PF30B400STC***",    kvar: 30,    cap: "165.87", current: "43.30", dim: null },
-      { pn: "3PF40B400STC***",    kvar: 40,    cap: "221.16", current: "57.74", dim: null }
-    ]
-  }
-  /* Add other voltages here following the same structure:
-  415: { 50: [...], 60: [...] },
-  440: { 50: [...], 60: [...] },
-  460: { 50: [...], 60: [...] },
-  480: { 50: [...], 60: [...] },
-  525: { 50: [...], 60: [...] }
-  */
-};
+const kvarList = [1, 2.5, 3.33, 5, 6.25, 7.5, 10, 12.5, 15, 20, 25, 30, 40];
+
+function formatKvar(kvar){
+  return kvar.toString();
+}
 
 function renderTable(){
-  const voltage = document.getElementById('filter-voltage').value;
-  const freq    = document.getElementById('filter-freq').value;
+  const voltage = parseInt(document.getElementById('filter-voltage').value);
+  const freq    = parseInt(document.getElementById('filter-freq').value);
   const tbody   = document.getElementById('ratings-tbody');
-  const dataset = ratingsData[voltage] && ratingsData[voltage][freq];
 
-  if(!dataset || dataset.length === 0){
-    tbody.innerHTML = '<tr class="no-data-row"><td colspan="5">No data available for this selection. <a href="/contact" style="color:#1A4F96;font-weight:600">Contact us</a> for custom ratings.</td></tr>';
-    return;
-  }
-
-  tbody.innerHTML = dataset.map(row => {
-    const dimCell = row.dim
-      ? `<td>${row.dim}</td>`
-      : `<td class="dim-link"><a href="/contact">Custom dimensions available on request</a></td>`;
+  tbody.innerHTML = kvarList.map(kvar => {
+    const current     = (kvar * 1000) / (Math.sqrt(3) * voltage);
+    const capacitance = (kvar * 1000) / (3 * 2 * Math.PI * freq * voltage * voltage) * 1e6;
+    const freqCode    = freq === 50 ? 'A' : 'B';
+    const partNumber  = `3PF${formatKvar(kvar)}${freqCode}${voltage}STC***`;
     return `<tr>
-      <td>${row.pn}</td>
-      <td>${row.kvar}</td>
-      <td>${row.cap}</td>
-      <td>${row.current}</td>
-      ${dimCell}
+      <td>${partNumber}</td>
+      <td>${kvar}</td>
+      <td>${capacitance.toFixed(2)}</td>
+      <td>${current.toFixed(2)}</td>
+      <td class="dim-link"><a href="/contact">Custom dimensions available on request</a></td>
     </tr>`;
   }).join('');
 }
 
-renderTable();
+document.addEventListener('DOMContentLoaded', renderTable);
 </script>
 </body>
 </html>
