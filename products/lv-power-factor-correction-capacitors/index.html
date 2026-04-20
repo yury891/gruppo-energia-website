@@ -49,7 +49,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 .page-hero h1{font-size:28px;font-weight:800;color:#0D2E5A;line-height:1.3;margin-bottom:12px;max-width:700px}
 .page-hero p{font-size:15px;color:#4A6080;line-height:1.75;max-width:640px}
 .banner-image{width:100%;height:300px;overflow:hidden;display:block}
-.banner-image img{width:100%;height:100%;object-fit:cover;object-position:center}
+.banner-image img{width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(0.85);transform-origin:center}
 .section-wrap{background:#fff}
 .section-alt-wrap{background:#F4F7FB;border-top:1px solid #D0D8E8;border-bottom:1px solid #D0D8E8}
 .section{padding:56px 40px;max-width:1280px;margin:0 auto}
@@ -66,8 +66,10 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 .selection-table tbody tr:hover{background:#EEF3FA}
 .selection-table td{padding:11px 16px;color:#2A3A4A;vertical-align:middle}
 .selection-table td:first-child{color:#0D2E5A;font-weight:600}
-.series-badge{display:inline-block;font-size:12px;font-weight:700;padding:4px 10px;border-radius:3px;background:#1A4F96;color:#fff;letter-spacing:0.5px}
+.series-badge{display:inline-block;font-size:12px;font-weight:700;padding:4px 10px;border-radius:3px;background:#1A4F96;color:#fff;letter-spacing:0.5px;text-decoration:none;transition:background 0.15s}
+.series-badge:hover{background:#F5C500;color:#1A4F96}
 .series-badge.hd{background:#0D2E5A}
+.series-badge.hd:hover{background:#F5C500;color:#0D2E5A}
 .table-disclaimer{font-size:12px;color:#8A9AB0;line-height:1.6;margin-top:14px;padding-top:12px;border-top:1px solid #E8ECF4;max-width:860px}
 .series-img{width:100%;height:120px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
 .series-img img{max-height:100%;max-width:100%;object-fit:contain;display:block}
@@ -204,7 +206,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
   <img src="/images/banners/lv-capacitors-banner.webp" alt="LV power factor correction capacitors for industrial applications" loading="eager">
 </div>
 
-<!-- 1. QUICK SELECTION — white background -->
+<!-- 1. QUICK SELECTION — white -->
 <div class="section-wrap"><div class="section">
   <div class="section-label">QUICK SELECTION</div>
   <h2>Select the Right Capacitor Series</h2>
@@ -227,42 +229,42 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
           <td>&lt; 10%</td>
           <td>≤ 5%</td>
           <td>≤ 3%</td>
-          <td><span class="series-badge">STC</span></td>
+          <td><a href="/products/lv-pfc-capacitors-stc/" class="series-badge">STC</a></td>
         </tr>
         <tr>
           <td>Moderate harmonic presence, variable loads</td>
           <td>&lt; 15%</td>
           <td>≤ 8%</td>
           <td>≤ 4%</td>
-          <td><span class="series-badge hd">STC HD</span></td>
+          <td><a href="/products/lv-pfc-capacitors-stc-hd/" class="series-badge hd">STC HD</a></td>
         </tr>
         <tr>
           <td>General industrial, automatic PFC systems</td>
           <td>&lt; 17%</td>
           <td>≤ 12%</td>
           <td>≤ 5%</td>
-          <td><span class="series-badge">INC</span></td>
+          <td><a href="/products/lv-pfc-capacitors-inc/" class="series-badge">INC</a></td>
         </tr>
         <tr>
           <td>Demanding industrial, frequent switching, increased harmonic stress</td>
           <td>&lt; 20%</td>
           <td>≤ 15%</td>
           <td>≤ 6%</td>
-          <td><span class="series-badge hd">INB HD</span></td>
+          <td><a href="/products/lv-pfc-capacitors-inb-hd/" class="series-badge hd">INB HD</a></td>
         </tr>
         <tr>
           <td>High harmonic levels, VFDs, UPS systems and non-linear loads</td>
           <td>&lt; 25%</td>
           <td>≤ 17%</td>
           <td>≤ 7%</td>
-          <td><span class="series-badge hd">INP HD</span></td>
+          <td><a href="/products/lv-pfc-capacitors-inp-hd/" class="series-badge hd">INP HD</a></td>
         </tr>
         <tr>
           <td>Very demanding industrial networks with severe harmonic stress</td>
           <td>&lt; 30%</td>
           <td>≤ 20%</td>
           <td>≤ 8%</td>
-          <td><span class="series-badge hd">INA HD</span></td>
+          <td><a href="/products/lv-pfc-capacitors-ina-hd/" class="series-badge hd">INA HD</a></td>
         </tr>
       </tbody>
     </table>
@@ -271,15 +273,8 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
   <p class="table-disclaimer">Capacitor technology should always be selected according to the most restrictive measured condition. If THDi, THDu and N<span style="font-size:0.75em;vertical-align:-2px">LL</span> suggest different selection levels, the highest requirement should be considered.</p>
 </div></div>
 
-<!-- 2. HOW TO CHOOSE — grey background -->
+<!-- 2. SERIES OVERVIEW — grey -->
 <div class="section-alt-wrap"><div class="section">
-  <div class="section-label">HOW TO CHOOSE</div>
-  <h2>How to Choose the Right Capacitor Series</h2>
-  <p class="section-intro">The first selection criteria are harmonic level, operating voltage and installation duty. In clean networks, standard series may be suitable. In industrial installations with variable loads, frequent switching or non-linear loads, a more robust series is required.</p>
-</div></div>
-
-<!-- 3. SERIES OVERVIEW — white background -->
-<div class="section-wrap"><div class="section">
   <div class="section-label">SERIES OVERVIEW</div>
   <h2>Capacitor Series Overview</h2>
   <p class="section-intro">Six series covering a wide range of LV network conditions, from standard installations to demanding industrial environments with harmonic distortion. Click on a series to view the full product details.</p>
@@ -412,7 +407,14 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
   </div>
 </div></div>
 
-<!-- 4. TECHNICAL COMPARISON — grey background -->
+<!-- 3. HOW TO CHOOSE — white -->
+<div class="section-wrap"><div class="section">
+  <div class="section-label">HOW TO CHOOSE</div>
+  <h2>How to Choose the Right Capacitor Series</h2>
+  <p class="section-intro">The first selection criteria are harmonic level, operating voltage and installation duty. In clean networks, standard series may be suitable. In industrial installations with variable loads, frequent switching or non-linear loads, a more robust series is required.</p>
+</div></div>
+
+<!-- 4. TECHNICAL COMPARISON — grey -->
 <div class="section-alt-wrap"><div class="section">
   <div class="section-label">TECHNICAL COMPARISON</div>
   <h2>Key Parameters at a Glance</h2>
@@ -526,7 +528,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
   </div>
 </div></div>
 
-<!-- 5. INSTALLATION RISK — white background -->
+<!-- 5. INSTALLATION RISK — white -->
 <div class="section-wrap"><div class="section">
   <div class="section-label">INSTALLATION RISK</div>
   <h2>What Happens If the Wrong Series Is Selected</h2>
@@ -553,7 +555,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
   </div>
 </div></div>
 
-<!-- 6. APPLICATIONS — grey background -->
+<!-- 6. APPLICATIONS — grey -->
 <div class="section-alt-wrap"><div class="section">
   <div class="section-label">APPLICATIONS</div>
   <h2>Typical Applications</h2>
