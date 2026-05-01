@@ -82,9 +82,10 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 .section h2,.section-alt h2{font-size:20px;font-weight:800;color:#0D2E5A;margin-bottom:10px;line-height:1.4}
 .section-sub{font-size:15px;color:#5A6A7A;margin-bottom:32px;line-height:1.75;max-width:800px}
 .products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:20px}
-.product-card{border:1px solid #D0D8E8;border-top:3px solid #1A4F96;border-radius:4px;padding:18px;transition:box-shadow 0.2s;display:flex;flex-direction:column}
-.product-card:hover{box-shadow:0 4px 16px rgba(26,79,150,0.1)}
+.product-card{border:1px solid #D0D8E8;border-top:3px solid #1A4F96;border-radius:4px;padding:18px;transition:box-shadow 0.2s,border-top-color 0.2s;display:flex;flex-direction:column;text-decoration:none;background:#fff;cursor:pointer}
+.product-card:hover{box-shadow:0 4px 16px rgba(26,79,150,0.1);border-top-color:#F5C500}
 .product-card.accent{border-top-color:#F5C500}
+.product-card.accent:hover{border-top-color:#1A4F96}
 .product-card h3{font-size:14px;font-weight:700;color:#0D2E5A;margin-bottom:8px;line-height:1.4}
 .product-card p{font-size:13px;color:#5A6A7A;line-height:1.65;margin-bottom:10px;flex:1}
 .product-count{font-size:12px;color:#8A9AB0;margin-bottom:12px;font-style:italic;line-height:1.5}
@@ -253,55 +254,62 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
   <h2>8 Product Families, 47 Types — Components, Assemblies and Complete Switchboards</h2>
   <p class="section-sub">A complete product range for reactive power compensation, harmonic mitigation, transformer applications and drive protection in industrial power systems.</p>
   <div class="products-grid">
-    <div class="product-card">
-      <h3>LV Power Factor Correction</h3>
-      <p>Capacitor banks, detuned reactors, controllers and switching devices for automatic reactive power compensation in industrial LV networks.</p>
-      <div class="product-count">10 product types</div>
-      <a href="/products/lv-power-factor-correction" class="product-link">View Products →</a>
-    </div>
-    <div class="product-card">
-      <h3>MV Power Factor Correction</h3>
-      <p>MV capacitor banks, reactors, switching and protection solutions for medium-voltage compensation systems and utility-grade installations.</p>
-      <div class="product-count">8 product types</div>
-      <a href="/products/mv-power-factor-correction" class="product-link">View Products →</a>
-    </div>
-    <div class="product-card accent">
-      <h3>Power Electronics Capacitors</h3>
-      <p>Capacitors for DC-Link, AC/DC conversion, HF filtering and heavy-current applications in power electronics and converter-based systems.</p>
-      <div class="product-count">6 product types</div>
-      <a href="/products/power-electronics-capacitors" class="product-link">View Products →</a>
-    </div>
-    <div class="product-card accent">
-      <h3>Induction Heating Capacitors</h3>
-      <p>Air-cooled and water-cooled capacitors for induction heating and melting equipment operating under demanding industrial conditions.</p>
-      <div class="product-count">2 product types</div>
-      <a href="/products/induction-heating-capacitors" class="product-link">View Products →</a>
-    </div>
-    <div class="product-card">
-      <h3>Power Quality &amp; Harmonics</h3>
-      <p>Line reactors, passive filters and active harmonic filters for networks with high non-linear loads, VFDs and harmonic distortion issues.</p>
-      <div class="product-count">3 product types</div>
-      <a href="/products/power-quality-harmonics" class="product-link">View Products →</a>
-    </div>
-    <div class="product-card">
-      <h3>Motor Protection &amp; Drive Components</h3>
-      <p>Load reactors, dv/dt filters and sinewave filters for inverter-fed motors, long cable runs and drive protection applications.</p>
-      <div class="product-count">3 product types</div>
-      <a href="/products/motor-protection-drive-components" class="product-link">View Products →</a>
-    </div>
-    <div class="product-card accent">
-      <h3>Transformers &amp; Voltage Regulation</h3>
-      <p>Isolation transformers, dry-type transformers, voltage stabilizers and special transformer solutions for industrial, medical and renewable applications.</p>
-      <div class="product-count">9 product types</div>
-      <a href="/products/transformers-voltage-regulation" class="product-link">View Products →</a>
-    </div>
-    <div class="product-card accent">
-      <h3>Motor &amp; Lighting Capacitors</h3>
-      <p>Motor run, motor start and lighting capacitors for OEMs, machinery manufacturers and general electrical applications.</p>
-      <div class="product-count">6 product types</div>
-      <a href="/products/motor-lighting-capacitors" class="product-link">View Products →</a>
-    </div>
-  </div>
+  <a href="/products/lv-power-factor-correction" class="product-card">
+    <h3>LV Power Factor Correction</h3>
+    <p>Capacitor banks, detuned reactors, controllers and switching devices for automatic reactive power compensation in industrial LV networks.</p>
+    <div class="product-count">10 product types</div>
+    <span class="product-link">View Products →</span>
+  </a>
+
+  <a href="/products/mv-power-factor-correction" class="product-card">
+    <h3>MV Power Factor Correction</h3>
+    <p>MV capacitor banks, reactors, switching and protection solutions for medium-voltage compensation systems and utility-grade installations.</p>
+    <div class="product-count">8 product types</div>
+    <span class="product-link">View Products →</span>
+  </a>
+
+  <a href="/products/power-electronics-capacitors" class="product-card accent">
+    <h3>Power Electronics Capacitors</h3>
+    <p>Capacitors for DC-Link, AC/DC conversion, HF filtering and heavy-current applications in power electronics and converter-based systems.</p>
+    <div class="product-count">6 product types</div>
+    <span class="product-link">View Products →</span>
+  </a>
+
+  <a href="/products/induction-heating-capacitors" class="product-card accent">
+    <h3>Induction Heating Capacitors</h3>
+    <p>Air-cooled and water-cooled capacitors for induction heating and melting equipment operating under demanding industrial conditions.</p>
+    <div class="product-count">2 product types</div>
+    <span class="product-link">View Products →</span>
+  </a>
+
+  <a href="/products/power-quality-harmonics" class="product-card">
+    <h3>Power Quality &amp; Harmonics</h3>
+    <p>Line reactors, passive filters and active harmonic filters for networks with high non-linear loads, VFDs and harmonic distortion issues.</p>
+    <div class="product-count">3 product types</div>
+    <span class="product-link">View Products →</span>
+  </a>
+
+  <a href="/products/motor-protection-drive-components" class="product-card">
+    <h3>Motor Protection &amp; Drive Components</h3>
+    <p>Load reactors, dv/dt filters and sinewave filters for inverter-fed motors, long cable runs and drive protection applications.</p>
+    <div class="product-count">3 product types</div>
+    <span class="product-link">View Products →</span>
+  </a>
+
+  <a href="/products/transformers-voltage-regulation" class="product-card accent">
+    <h3>Transformers &amp; Voltage Regulation</h3>
+    <p>Isolation transformers, dry-type transformers, voltage stabilizers and special transformer solutions for industrial, medical and renewable applications.</p>
+    <div class="product-count">9 product types</div>
+    <span class="product-link">View Products →</span>
+  </a>
+
+  <a href="/products/motor-lighting-capacitors" class="product-card accent">
+    <h3>Motor &amp; Lighting Capacitors</h3>
+    <p>Motor run, motor start and lighting capacitors for OEMs, machinery manufacturers and general electrical applications.</p>
+    <div class="product-count">6 product types</div>
+    <span class="product-link">View Products →</span>
+  </a>
+</div>
   <div class="products-footer">Need a non-standard solution? We support custom configurations based on project specifications, application requirements and technical constraints.</div>
 </div></div>
 
