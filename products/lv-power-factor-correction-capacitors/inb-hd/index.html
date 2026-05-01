@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>INB HD Power Factor Correction Capacitors | Heavy-Duty Industrial LV Capacitors | Gruppo Energia</title>
+<title>INB HD Power Factor Correction Capacitors | Heavy-Duty LV PFC Capacitors | Gruppo Energia</title>
 <meta name="description" content="INB HD low-voltage power factor correction capacitors for demanding industrial PFC systems with increased harmonic stress. NLL below 20%, service life of 170,000 h. Available from 1 to 50 kVar and 220 to 690 V.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.gruppoenergia.com/products/lv-power-factor-correction-capacitors/inb-hd/">
@@ -225,7 +225,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
       </div>
     </div>
     <div class="product-hero-img">
-      <img src="/images/products/capacitors/3ph-lv-capacitor-inb-hd.webp" alt="INB HD heavy-duty industrial low-voltage power factor correction capacitor" width="600" height="600" loading="eager">
+      <img src="/images/products/capacitors/3ph-lv-capacitor-inb-hd.webp" alt="INB HD heavy-duty industrial low-voltage power factor correction capacitor" width="600" height="600" loading="eager" decoding="async"> alt="INB HD heavy-duty industrial low-voltage power factor correction capacitor" width="600" height="600" loading="eager">
     </div>
   </div>
 </div>
@@ -325,12 +325,12 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
   <h2>Part Number Structure</h2>
   <p class="section-intro">The INB HD part number identifies configuration, power, frequency and voltage. The final suffix *** is completed according to capacitor dimensions and terminal configuration. For single-phase execution, the prefix becomes 1PF.</p>
   <div style="background:#fff;border:1px solid #D0D8E8;border-left:3px solid #1A4F96;border-radius:4px;padding:16px 20px;margin-top:4px;display:inline-block">
-    <span style="font-family:monospace;font-size:15px;font-weight:700;color:#0D2E5A;letter-spacing:1px">3PF[kVar][Freq][Voltage]BHD[***]</span><br>
-    <span style="font-family:monospace;font-size:15px;font-weight:700;color:#0D2E5A;letter-spacing:1px">1PF[kVar][Freq][Voltage]BHD[***]</span>
+    <span style="font-family:monospace;font-size:15px;font-weight:700;color:#0D2E5A;letter-spacing:1px">3PF[kVar][Freq][Voltage]INB[***]</span><br>
+    <span style="font-family:monospace;font-size:15px;font-weight:700;color:#0D2E5A;letter-spacing:1px">1PF[kVar][Freq][Voltage]INB[***]</span>
   </div>
   <p style="font-size:13px;color:#4A6080;margin-top:12px;line-height:1.6">
-    Example: <span style="font-family:monospace;font-weight:600;color:#0D2E5A">3PF10A400BHD***</span> — 10 kVar, 50 Hz (A), 400 V, INB HD series, three-phase.<br>
-    Example: <span style="font-family:monospace;font-weight:600;color:#0D2E5A">1PF10A400BHD***</span> — same rating, single-phase execution.<br>
+    Example: <span style="font-family:monospace;font-weight:600;color:#0D2E5A">3PF10A400INB***</span> — 10 kVar, 50 Hz (A), 400 V, INB HD series, three-phase.<br>
+    Example: <span style="font-family:monospace;font-weight:600;color:#0D2E5A">1PF10A400INB***</span> — same rating, single-phase execution.<br>
     Suffix *** defines dimensions and terminals.
   </p>
 </div></div>
@@ -491,7 +491,7 @@ function renderTable(){
 
     const freqCode   = freq === 50 ? 'A' : 'B';
     const prefix     = phase === 'three' ? '3PF' : '1PF';
-    const partNumber = `${prefix}${formatKvar(kvar)}${freqCode}${voltage}BHD***`;
+    const partNumber = `${prefix}${formatKvar(kvar)}${freqCode}${voltage}INB***`;
 
     return `<tr>
       <td>${partNumber}</td>
