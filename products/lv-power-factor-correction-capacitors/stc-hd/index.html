@@ -120,6 +120,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 .ratings-table td:first-child{font-family:monospace;font-size:12px;color:#0D2E5A;font-weight:600}
 .ratings-table td.dim-link a{color:#1A4F96;font-size:12px;font-weight:600;text-decoration:none}
 .ratings-table td.dim-link a:hover{text-decoration:underline}
+.ratings-table td.dim-link .dim-note{color:#1A4F96;font-size:12px;font-weight:600}
 .table-disclaimer{font-size:12px;color:#8A9AB0;line-height:1.6;margin-top:14px;padding-top:12px;border-top:1px solid #E8ECF4;max-width:860px}
 .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
 .related-card{border:1px solid #D0D8E8;border-top:2px solid #D0D8E8;border-radius:4px;padding:16px;text-decoration:none;display:block;transition:box-shadow 0.15s,border-top-color 0.15s}
@@ -312,7 +313,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 <div class="section-alt-wrap"><div class="section">
   <div class="section-label">PART NUMBER</div>
   <h2>Part Number Structure</h2>
-  <p class="section-intro">The final suffix *** is completed according to the capacitor dimensions and terminal configuration. Standard and custom configurations are available. Contact our team to confirm the correct part number for your application.</p>
+  <p class="section-intro">The STC HD part number identifies power, frequency and voltage. The final suffix *** is completed according to capacitor dimensions and terminal configuration.</p>
   <div style="background:#fff;border:1px solid #D0D8E8;border-left:3px solid #1A4F96;border-radius:4px;padding:16px 20px;margin-top:4px;display:inline-block">
     <span style="font-family:monospace;font-size:15px;font-weight:700;color:#0D2E5A;letter-spacing:1px">3PF[kVar][Freq][Voltage]SHD[***]</span>
   </div>
@@ -323,7 +324,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 <div class="section-wrap"><div class="section">
   <div class="section-label">SELECTION LIMITS</div>
   <h2>When a More Robust Series May Be Required</h2>
-  <p class="section-intro">If any of the following conditions apply to your installation, a higher-rated series such as INC, INB HD or INP HD should be considered.</p>
+  <p class="section-intro">If any of the following conditions apply to your installation, a more robust series such as INC, INB HD or INP HD should be considered.</p>
   <ul class="bullet-list red">
     <li>Measured THDi above 8% or THDu above 4%</li>
     <li>N<span style="font-size:0.75em;vertical-align:-2px">LL</span> greater than 15%</li>
@@ -470,7 +471,7 @@ function renderTable(){
       <td>${kvar}</td>
       <td>${capacitance.toFixed(2)}</td>
       <td>${current.toFixed(2)}</td>
-      <td class="dim-link"><a href="/contact">Custom dimensions available on request</a></td>
+      <td class="dim-link"><a href="/contact">View standard dimensions</a></td>
     </tr>`;
   }).join('');
 }
