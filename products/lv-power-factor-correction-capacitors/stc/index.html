@@ -272,6 +272,13 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 
   <div class="filters-row">
     <div class="filter-group">
+      <label for="filter-phase">Configuration</label>
+      <select id="filter-phase" onchange="renderTable()">
+        <option value="three">Three-phase</option>
+        <option value="single">Single-phase</option>
+      </select>
+    </div>
+    <div class="filter-group">
       <label for="filter-voltage">Voltage</label>
       <select id="filter-voltage" onchange="renderTable()">
         <option value="400">400 V</option>
@@ -297,7 +304,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
         <tr>
           <th>Part Number</th>
           <th>Power (kVar)</th>
-          <th>Capacitance (3 × µF)</th>
+          <th id="cap-header">Capacitance (3 × µF)</th>
           <th>Current (A)</th>
           <th>Dimensions (Ø × H mm)</th>
         </tr>
@@ -458,13 +465,25 @@ function formatKvar(kvar){
 function renderTable(){
   const voltage = parseInt(document.getElementById('filter-voltage').value);
   const freq    = parseInt(document.getElementById('filter-freq').value);
+  const phase = document.getElementById('filter-phase').value;
   const tbody   = document.getElementById('ratings-tbody');
 
+  const capHeader = document.getElementById('cap-header');
+capHeader.textContent = phase === 'three'
+  ? 'Capacitance (3 × µF)'
+  : 'Capacitance (µF)';
   tbody.innerHTML = kvarList.map(kvar => {
-    const current     = (kvar * 1000) / (Math.sqrt(3) * voltage);
-    const capacitance = (kvar * 1000) / (3 * 2 * Math.PI * freq * voltage * voltage) * 1e6;
-    const freqCode    = freq === 50 ? 'A' : 'B';
-    const partNumber  = `3PF${formatKvar(kvar)}${freqCode}${voltage}STC***`;
+    const current = phase === 'three'
+  ? (kvar * 1000) / (Math.sqrt(3) * voltage)
+  : (kvar * 1000) / voltage;
+
+const capacitance = phase === 'three'
+  ? (kvar * 1000) / (3 * 2 * Math.PI * freq * voltage * voltage) * 1e6
+  : (kvar * 1000) / (2 * Math.PI * freq * voltage * voltage) * 1e6;
+
+const freqCode = freq === 50 ? 'A' : 'B';
+const prefix = phase === 'three' ? '3PF' : '1PF';
+const partNumber = `${prefix}${formatKvar(kvar)}${freqCode}${voltage}STC***`;
     return `<tr>
       <td>${partNumber}</td>
       <td>${kvar}</td>
