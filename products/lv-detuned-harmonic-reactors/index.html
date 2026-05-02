@@ -106,8 +106,8 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 .specs-table th{background:#0D2E5A;color:#fff;padding:10px 12px;text-align:center;font-weight:700;white-space:nowrap}
 .specs-table th:first-child{text-align:left}
 .specs-table td{padding:9px 12px;border-bottom:1px solid #E8ECF4;vertical-align:middle;text-align:center}
-.specs-table td:first-child{text-align:left;color:#0D2E5A;font-weight:600;background:#F8FAFE}
-.specs-table tr:nth-child(even) td:not(:first-child){background:#F8FAFE}
+.specs-table td:first-child{text-align:left;color:#0D2E5A;font-weight:600}
+.specs-table tbody tr:nth-child(even) td{background:#F8FAFE}
 .specs-table tr:hover td{background:#EEF3FA}
 .specs-highlight{font-weight:700;color:#1A4F96}
 .app-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
@@ -227,7 +227,6 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
           <th>Network Condition</th>
           <th>Typical Scenario</th>
           <th>Recommended Tuning</th>
-          <th>Design Level</th>
         </tr>
       </thead>
       <tbody>
@@ -235,37 +234,59 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
           <td>Clean network, no significant harmonic sources</td>
           <td>Standard industrial or commercial installation</td>
           <td><span class="series-badge">5.67%</span></td>
-          <td>Standard</td>
         </tr>
         <tr>
           <td>Industrial network with VFDs or variable speed drives</td>
           <td>Manufacturing, pumping, HVAC with inverters</td>
           <td><span class="series-badge hd">7%</span></td>
-          <td>Standard / Heavy Duty</td>
         </tr>
         <tr>
-          <td>Mixed harmonic sources, moderate distortion</td>
-          <td>Mixed loads, multiple drive types</td>
+          <td>Mixed harmonic sources, moderate distortion — including 3rd harmonic presence</td>
+          <td>Mixed loads, multiple drive types, single-phase loads, welding</td>
           <td><span class="series-badge hd">14%</span></td>
-          <td>Heavy Duty</td>
-        </tr>
-        <tr>
-          <td>3rd harmonic present or dominant</td>
-          <td>Single-phase loads, welding, arc furnaces</td>
-          <td><span class="series-badge hd">14%</span></td>
-          <td>Heavy Duty / Custom</td>
         </tr>
         <tr>
           <td>Highly stressed network, severe harmonic environment</td>
           <td>Based on harmonic analysis</td>
           <td><span class="series-badge hd">On request</span></td>
-          <td>Extra Heavy Duty</td>
         </tr>
       </tbody>
     </table>
   </div>
   <p class="table-disclaimer">Detuning factor defines the resonance frequency of the LC circuit, not the harmonic level in the network. Reactor design level determines its ability to withstand harmonic stress, overloads and thermal demands.</p>
   <p class="table-disclaimer">Final selection should be based on a harmonic measurement or analysis of the installation. Contact our technical team if measurement data is available.</p>
+
+  <h2 style="font-size:17px;font-weight:700;color:#0D2E5A;margin-top:36px;margin-bottom:12px;line-height:1.4">Resonance Frequencies by Tuning Factor</h2>
+  <p class="section-intro" style="margin-bottom:16px">Standard power range: 1 – 100 kVAr · Voltage: 220 – 850 V · Frequency: 50 / 60 Hz · Other tuning factors on request.</p>
+  <div class="specs-table-wrap">
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Tuning Factor</th>
+          <th>Resonance Frequency at 50 Hz</th>
+          <th>Resonance Frequency at 60 Hz</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>5.67%</td>
+          <td>~210 Hz</td>
+          <td>~252 Hz</td>
+        </tr>
+        <tr>
+          <td>7%</td>
+          <td>~189 Hz</td>
+          <td>~227 Hz</td>
+        </tr>
+        <tr>
+          <td>14%</td>
+          <td>~134 Hz</td>
+          <td>~160 Hz</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="table-disclaimer">Resonance frequencies are approximate and depend on actual capacitor and reactor tolerances. Final values confirmed at order stage.</p>
 </div></div>
 
 <!-- 2. PRODUCT RANGE — grey -->
@@ -365,56 +386,6 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
     </table>
   </div>
   <p class="section-intro" style="margin-top:20px;margin-bottom:0">Higher design levels provide increased thermal capability, improved linearity and higher saturation limits for operation in more demanding harmonic environments.</p>
-</div></div>
-
-<!-- 4. TECHNICAL RANGE — grey -->
-<div class="section-alt-wrap"><div class="section">
-  <div class="section-label">TECHNICAL RANGE</div>
-  <h2>Technical Range</h2>
-  <p class="section-intro">Standard product range covering the most common industrial applications. Custom configurations available on request.</p>
-  <div class="series-specs" style="max-width:480px;gap:10px;margin-bottom:28px;padding:20px 24px;border:1px solid #D0D8E8;border-radius:4px;background:#fff">
-    <div class="series-spec" style="font-size:13px">
-      <span class="spec-label">Power range</span><span class="spec-value">1 – 100 kVAr</span>
-    </div>
-    <div class="series-spec" style="font-size:13px">
-      <span class="spec-label">Voltage range</span><span class="spec-value">220 – 850 V</span>
-    </div>
-    <div class="series-spec" style="font-size:13px">
-      <span class="spec-label">Frequency</span><span class="spec-value">50 / 60 Hz</span>
-    </div>
-    <div class="series-spec" style="font-size:13px">
-      <span class="spec-label">Tuning factors</span><span class="spec-value">5.67% / 7% / 14% (others on request)</span>
-    </div>
-  </div>
-  <div class="specs-table-wrap">
-    <table class="specs-table">
-      <thead>
-        <tr>
-          <th>Tuning Factor</th>
-          <th>Resonance Frequency at 50 Hz</th>
-          <th>Resonance Frequency at 60 Hz</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>5.67%</td>
-          <td>~210 Hz</td>
-          <td>~250 Hz</td>
-        </tr>
-        <tr>
-          <td>7%</td>
-          <td>~189 Hz</td>
-          <td>~230 Hz</td>
-        </tr>
-        <tr>
-          <td>14%</td>
-          <td class="specs-highlight">~134 Hz</td>
-          <td class="specs-highlight">~160 Hz</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="table-disclaimer">Resonance frequencies are approximate and depend on actual capacitor and reactor tolerances. Final values confirmed at order stage.</p>
 </div></div>
 
 <!-- 5. INSTALLATION RISK — white -->
