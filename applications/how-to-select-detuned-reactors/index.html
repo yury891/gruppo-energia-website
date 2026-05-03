@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Select Detuned Reactors | 5.67%, 7%, 14% | Gruppo Energia</title>
+<meta name="description" content="Technical guide to select LV detuned reactors for power factor correction systems based on tuning factor, resonance frequency, harmonic spectrum, THDi, THDu, capacitor data and reactor design level.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.gruppoenergia.com/applications/how-to-select-detuned-reactors">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "name": "How to Select Detuned Reactors for Power Factor Correction Systems",
+  "description": "Technical guide to select LV detuned reactors based on tuning factor, resonance frequency, harmonic spectrum, THDi, THDu, capacitor data and reactor design level.",
+  "url": "https://www.gruppoenergia.com/applications/how-to-select-detuned-reactors",
+  "author": {"@type": "Organization", "name": "Gruppo Energia s.r.l."},
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gruppoenergia.com"},
+      {"@type": "ListItem", "position": 2, "name": "Applications", "item": "https://www.gruppoenergia.com/applications"},
+      {"@type": "ListItem", "position": 3, "name": "How to Select Detuned Reactors", "item": "https://www.gruppoenergia.com/applications/how-to-select-detuned-reactors"}
+    ]
+  }
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-height:1.5}
+.navbar{background:#fff;border-bottom:1px solid #D0D8E8;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:80px;position:sticky;top:0;z-index:1000}
+.navbar-logo img{height:68px;width:auto;display:block}
+.navbar-menu{display:flex;gap:28px;align-items:center}
+.navbar-menu a{font-size:14px;color:#1A4F96;text-decoration:none;font-weight:500;transition:color 0.2s}
+.navbar-menu a:hover{color:#F5C500}
+.navbar-menu a.active{color:#F5C500;font-weight:700}
+.navbar-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.navbar-hamburger span{display:block;width:24px;height:2px;background:#1A4F96;border-radius:2px}
+.mobile-menu{display:none;position:fixed;top:80px;left:0;right:0;background:#fff;border-bottom:1px solid #D0D8E8;padding:20px 24px;z-index:999;flex-direction:column}
+.mobile-menu a{font-size:15px;color:#1A4F96;text-decoration:none;font-weight:500;padding:14px 0;border-bottom:1px solid #F0F4FA;display:block}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu.open{display:flex}
+.breadcrumb{background:#fff;padding:12px 40px;border-bottom:1px solid #F0F4FA;font-size:12px;color:#8A9AB0;line-height:1.5}
+.breadcrumb a{color:#1A4F96;text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb span{margin:0 6px}
+.page-hero{background:#F4F7FB;padding:48px 40px;border-bottom:3px solid #1A4F96}
+.page-hero-inner{max-width:1280px;margin:0 auto}
+.page-hero-label{font-size:12px;color:#1A4F96;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.page-hero h1{font-size:28px;font-weight:800;color:#0D2E5A;line-height:1.3;margin-bottom:12px;max-width:700px}
+.page-hero p{font-size:15px;color:#4A6080;line-height:1.75;max-width:640px}
+.banner-image{width:100%;height:300px;overflow:hidden;display:block}
+.banner-image img{width:100%;height:100%;object-fit:cover;object-position:center 60%}
+.section-wrap{background:#fff}
+.section-alt-wrap{background:#F4F7FB;border-top:1px solid #D0D8E8;border-bottom:1px solid #D0D8E8}
+.section{padding:56px 40px;max-width:1280px;margin:0 auto}
+.section-label{font-size:12px;color:#1A4F96;font-weight:700;letter-spacing:2px;margin-bottom:10px;text-transform:uppercase}
+.section h2{font-size:20px;font-weight:800;color:#0D2E5A;margin-bottom:14px;line-height:1.4}
+.section-intro{font-size:14px;color:#4A6080;line-height:1.75;margin-bottom:16px;max-width:860px}
+.section-intro + .section-intro{margin-top:-4px}
+.table-title{font-size:13px;font-weight:700;color:#0D2E5A;margin-bottom:10px;margin-top:28px}
+.table-disclaimer{font-size:12px;color:#8A9AB0;line-height:1.6;margin-top:12px;padding-top:10px;border-top:1px solid #E8ECF4;max-width:860px}
+.specs-table-wrap{overflow-x:auto}
+.specs-table{width:100%;border-collapse:collapse;font-size:12px;min-width:600px}
+.specs-table th{background:#0D2E5A;color:#fff;padding:10px 14px;text-align:left;font-weight:700;white-space:nowrap}
+.specs-table td{padding:9px 14px;border-bottom:1px solid #E8ECF4;vertical-align:middle;color:#2A3A4A}
+.specs-table tbody tr:nth-child(even) td{background:#F8FAFE}
+.specs-table tbody tr:hover td{background:#EEF3FA}
+.specs-table td:first-child{color:#0D2E5A;font-weight:600}
+.specs-highlight{font-weight:700;color:#1A4F96}
+.problem-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:4px}
+.problem-card{border:1px solid #D0D8E8;border-left:3px solid #C0392B;border-radius:4px;padding:14px 16px;background:#fff}
+.problem-card p{font-size:13px;color:#4A6080;line-height:1.5;font-weight:500}
+.series-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.series-card{border:1px solid #D0D8E8;border-top:3px solid #1A4F96;border-radius:4px;background:#fff;padding:20px 22px;transition:box-shadow 0.15s,border-top-color 0.15s;display:flex;flex-direction:column;text-decoration:none;color:inherit}
+.series-card:hover{box-shadow:0 2px 12px rgba(26,79,150,0.12);border-top-color:#F5C500}
+.series-card.top{border-top-color:#0D2E5A}
+.series-card.top:hover{border-top-color:#F5C500}
+.article-cat{font-size:11px;font-weight:700;color:#1A4F96;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.series-card.top .article-cat{color:#0D2E5A}
+.series-card h3{font-size:13px;font-weight:700;color:#0D2E5A;margin-bottom:6px;line-height:1.4}
+.series-card .positioning{font-size:12px;color:#4A6080;line-height:1.6;flex:1}
+.view-series{display:inline-block;font-size:11px;font-weight:700;color:#1A4F96;margin-top:12px;padding-top:8px;border-top:1px solid #EEF3FA}
+.series-card:hover .view-series{color:#F5C500}
+.info-box{background:#EEF3FA;border-left:3px solid #1A4F96;border-radius:4px;padding:16px 20px;margin-top:20px;max-width:860px}
+.info-box p{font-size:13px;color:#2A3A4A;line-height:1.65}
+.info-box strong{color:#0D2E5A}
+.cta-banner{background:#0D2E5A;padding:56px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+.cta-banner-text h2{font-size:20px;font-weight:800;color:#fff;margin-bottom:10px}
+.cta-banner-text p{font-size:15px;color:rgba(255,255,255,0.8);line-height:1.75;max-width:500px}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:#F5C500;color:#1A4F96;font-size:14px;font-weight:700;padding:14px 24px;border-radius:4px;border:2px solid #F5C500;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;transition:all 0.2s;white-space:nowrap}
+.btn-primary:hover{background:#e6b800;border-color:#e6b800}
+.btn-secondary{background:transparent;color:#fff;font-size:14px;font-weight:600;padding:14px 24px;border-radius:4px;border:2px solid rgba(255,255,255,0.6);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;transition:all 0.2s;white-space:nowrap}
+.btn-secondary:hover{border-color:#fff;background:rgba(255,255,255,0.1)}
+.footer{background:#F4F7FB;padding:56px 40px 24px;border-top:3px solid #1A4F96}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px}
+.footer-logo img{height:44px;width:auto;display:block;margin-bottom:6px}
+.footer-logo-name{font-size:13px;font-weight:700;color:#1A4F96;margin-bottom:10px}
+.footer-desc{font-size:13px;color:#5A6A7A;line-height:1.65;margin-bottom:16px}
+.footer-contact{font-size:13px;color:#1A4F96;line-height:2.2}
+.footer-contact a{color:#1A4F96;text-decoration:none}
+.footer-col h4{font-size:12px;font-weight:700;color:#1A4F96;margin-bottom:14px;letter-spacing:1px;text-transform:uppercase}
+.footer-col a{display:block;font-size:13px;color:#5A6A7A;text-decoration:none;line-height:2.2}
+.footer-col a:hover{color:#1A4F96}
+.footer-bottom{border-top:1px solid #D0D8E8;padding-top:16px;display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-top:24px}
+.footer-bottom a{font-size:12px;color:#8A9AB0;text-decoration:none}
+.footer-bottom a:hover{color:#1A4F96}
+.footer-copy{font-size:12px;color:#8A9AB0;margin-left:auto}
+@media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){
+  .navbar{padding:0 20px;height:72px}.navbar-menu{display:none}.navbar-hamburger{display:flex}
+  .breadcrumb{padding:10px 20px}
+  .page-hero{padding:36px 20px}.page-hero h1{font-size:22px}
+  .section{padding:40px 20px}
+  .cta-banner{flex-direction:column;text-align:center;padding:40px 20px}
+  .cta-banner-text p{max-width:100%}
+  .footer{padding:40px 20px 20px}.footer-copy{margin-left:0;margin-top:8px}
+  .banner-image{height:220px}
+}
+@media(max-width:600px){
+  .footer-grid{grid-template-columns:1fr}
+  .page-hero h1{font-size:20px}
+  .cta-btns{flex-direction:column;width:100%}
+  .btn-primary,.btn-secondary{width:100%;justify-content:center}
+  .banner-image{height:180px}
+  .problem-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="navbar">
+  <a href="/" class="navbar-logo">
+    <img src="/LOGO%202017%20copia.png" alt="Gruppo Energia — Italian Manufacturer">
+  </a>
+  <nav class="navbar-menu">
+    <a href="/products">Products</a>
+    <a href="/applications" class="active">Applications</a>
+    <a href="/custom-solutions">Custom Solutions</a>
+    <a href="/about">About Us</a>
+    <a href="/documentation">Documentation</a>
+    <a href="/export">Export</a>
+    <a href="/blog">Blog</a>
+    <a href="/contact">Contact</a>
+  </nav>
+  <button class="navbar-hamburger" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="/products" onclick="toggleMenu()">Products</a>
+  <a href="/applications" onclick="toggleMenu()">Applications</a>
+  <a href="/custom-solutions" onclick="toggleMenu()">Custom Solutions</a>
+  <a href="/about" onclick="toggleMenu()">About Us</a>
+  <a href="/documentation" onclick="toggleMenu()">Documentation</a>
+  <a href="/export" onclick="toggleMenu()">Export</a>
+  <a href="/blog" onclick="toggleMenu()">Blog</a>
+  <a href="/contact" onclick="toggleMenu()">Contact</a>
+</nav>
+
+<div class="breadcrumb">
+  <a href="/">Home</a><span>→</span>
+  <a href="/applications">Applications</a><span>→</span>
+  <span>How to Select Detuned Reactors</span>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-label">Applications</div>
+    <h1>How to Select Detuned Reactors for Power Factor Correction Systems</h1>
+    <p>Detuned reactors are used with capacitor banks to prevent resonance and protect power factor correction systems in networks affected by harmonic distortion. Correct selection depends on tuning factor, capacitor data, network voltage, harmonic spectrum and reactor design level.</p>
+  </div>
+</div>
+
+<div class="banner-image">
+  <img src="/images/banners/detuned-reactor-selection-banner.webp" alt="Detuned reactor selection for power factor correction systems" loading="eager">
+</div>
+
+<!-- 1. INTRODUCTION — white -->
+<div class="section-wrap"><div class="section">
+  <div class="section-label">Application Note</div>
+  <h2>Why Detuned Reactors Are Used</h2>
+  <p class="section-intro">Capacitor banks used for reactive power compensation can interact with network impedance and harmonic currents generated by non-linear loads such as variable frequency drives, UPS systems and rectifiers. Under certain conditions, this interaction can create resonance — a condition where harmonic voltages and currents are amplified rather than absorbed, increasing distortion and stressing electrical equipment.</p>
+  <p class="section-intro">Detuned reactors shift the resonance frequency of the capacitor-reactor LC circuit to a value below the dominant harmonic frequency present in the network. Their primary role is to prevent resonance and protect capacitors, contactors and other switching components from harmonic overcurrents. Detuned reactors do not eliminate harmonics from the network — for harmonic mitigation, dedicated filtering solutions are required.</p>
+</div></div>
+
+<!-- 2. HARMONIC SPECTRUM — grey -->
+<div class="section-alt-wrap"><div class="section">
+  <div class="section-label">Harmonic Spectrum</div>
+  <h2>Why Harmonic Spectrum Matters More Than THD Alone</h2>
+  <p class="section-intro">THDi and THDu are useful indicators of distortion severity, but they are not sufficient alone for reactor selection. THDi expresses total harmonic current distortion as a percentage of the fundamental current, while THDu expresses the resulting voltage distortion at the point of measurement. Both values depend heavily on the individual harmonic components present in the network.</p>
+  <p class="section-intro">Reactor selection must consider the individual harmonic orders — 3rd, 5th, 7th, 11th, 13th and higher — and their relative magnitudes. The 5th harmonic is dominant in most industrial networks with 6-pulse drives, while the 3rd harmonic may be significant in installations with single-phase loads or unbalanced systems.</p>
+
+  <div class="info-box">
+    <p><strong>Important:</strong> Two installations can have the same THDi but completely different harmonic spectra, and therefore may require different tuning factors and reactor design levels. Always evaluate the full harmonic spectrum before selecting a reactor.</p>
+  </div>
+
+  <div class="table-title">Example of Harmonic Spectrum Used for Reactor Evaluation</div>
+  <div class="specs-table-wrap">
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Harmonic Order</th>
+          <th>Voltage Spectrum Example</th>
+          <th>Current Spectrum Example — 7% Standard Reactor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>3rd</td><td>0.5%</td><td>3.0%</td></tr>
+        <tr><td>5th</td><td>6.0%</td><td>20.0%</td></tr>
+        <tr><td>7th</td><td>5.0%</td><td>12.0%</td></tr>
+        <tr><td>11th</td><td>3.5%</td><td>7.0%</td></tr>
+        <tr><td>13th</td><td>3.0%</td><td>5.0%</td></tr>
+        <tr><td>17th</td><td>—</td><td>4.0%</td></tr>
+        <tr><td>19th</td><td>—</td><td>2.0%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="table-disclaimer">Values are representative application data used for reactor evaluation. Final selection must be based on measured or project-specific harmonic spectrum.</p>
+</div></div>
+
+<!-- 3. TUNING FACTOR — white -->
+<div class="section-wrap"><div class="section">
+  <div class="section-label">Tuning Factor</div>
+  <h2>Choosing the Tuning Factor: 5.67%, 7% or 14%</h2>
+  <p class="section-intro">The detuning factor defines the resonance frequency of the LC circuit — it does not define reactor robustness or harmonic capability. A higher tuning factor means a lower resonance frequency, which places the tuned circuit further from the dominant harmonics. Selection depends on the harmonic spectrum present in the network, not on a general rule of "clean" versus "dirty" networks.</p>
+  <p class="section-intro">A 14% tuning factor is not reserved only for highly distorted networks. It is selected when the resonance frequency must be placed well below the 3rd harmonic, for example in installations with low-order harmonic components, unbalanced loads or specific harmonic conditions identified by measurement.</p>
+
+  <div class="specs-table-wrap" style="margin-top:20px">
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Tuning Factor</th>
+          <th>Tuning Order</th>
+          <th>Resonance Freq. at 50 Hz</th>
+          <th>Resonance Freq. at 60 Hz</th>
+          <th>Typical Use</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>5.67%</td>
+          <td>4.2</td>
+          <td>~210 Hz</td>
+          <td>~252 Hz</td>
+          <td>Clean or lightly distorted networks</td>
+        </tr>
+        <tr>
+          <td>7%</td>
+          <td>3.8</td>
+          <td>~189 Hz</td>
+          <td>~227 Hz</td>
+          <td>Industrial networks with VFDs and dominant 5th harmonic</td>
+        </tr>
+        <tr>
+          <td>14%</td>
+          <td>2.7</td>
+          <td>~134 Hz</td>
+          <td>~160 Hz</td>
+          <td>Mixed harmonic sources or low-order harmonic presence</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div></div>
+
+<!-- 4. THDu / THDi LIMITS — grey -->
+<div class="section-alt-wrap"><div class="section">
+  <div class="section-label">THDu &amp; THDi Limits</div>
+  <h2>THDu and THDi Limits Used in Reactor Selection</h2>
+  <p class="section-intro">THDu and THDi values are used to evaluate the severity of the installation and to determine the required reactor design level alongside the tuning factor. The following table shows indicative application limits used in reactor evaluation. These values depend on the assumed harmonic spectrum and reactor construction — they must not be interpreted as universal values applicable to every installation.</p>
+
+  <div class="table-title">Typical Application Limits</div>
+  <div class="specs-table-wrap">
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Design / Tuning</th>
+          <th>5.67%</th>
+          <th>7%</th>
+          <th>14%</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Maximum THDu limit</td>
+          <td>&lt; 6%</td>
+          <td>&lt; 7%</td>
+          <td>&lt; 8%</td>
+        </tr>
+        <tr>
+          <td>Standard reactor — max THDi</td>
+          <td>&lt; 60%</td>
+          <td>&lt; 24%</td>
+          <td>&lt; 11%</td>
+        </tr>
+        <tr>
+          <td>Heavy Duty reactor — max THDi</td>
+          <td>&lt; 85%</td>
+          <td>&lt; 36%</td>
+          <td>&lt; 20%</td>
+        </tr>
+        <tr>
+          <td>Extra Heavy Duty reactor — max THDi</td>
+          <td>—</td>
+          <td class="specs-highlight">&lt; 50%</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="table-disclaimer">THDi limits depend on the assumed harmonic spectrum and reactor design. Values are indicative — final selection requires evaluation of the full harmonic spectrum and operating conditions of the specific installation.</p>
+</div></div>
+
+<!-- 5. DESIGN LEVEL — white -->
+<div class="section-wrap"><div class="section">
+  <div class="section-label">Design Level</div>
+  <h2>Tuning Factor Is Not the Same as Reactor Robustness</h2>
+  <p class="section-intro">Tuning factor and design level are two independent selection parameters. The tuning factor (5.67%, 7%, 14%) defines the resonance frequency of the LC circuit. The design level (Standard, Heavy Duty, Extra Heavy Duty) defines the construction robustness of the reactor — its saturation current, linearity and thermal capability.</p>
+  <p class="section-intro">A 7% reactor can be Standard, Heavy Duty or Extra Heavy Duty. Selecting the correct design level depends on the harmonic current stress, ambient temperature and duty cycle of the installation — not on the tuning factor alone.</p>
+
+  <div class="specs-table-wrap" style="margin-top:20px">
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Standard</th>
+          <th>Heavy Duty</th>
+          <th>Extra Heavy Duty</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Saturation current</td>
+          <td>1.7 × In</td>
+          <td>2.0 × In</td>
+          <td class="specs-highlight">2.5 × In</td>
+        </tr>
+        <tr>
+          <td>Linearity</td>
+          <td>&gt; 1.7 × In</td>
+          <td>&gt; 2.0 × In</td>
+          <td class="specs-highlight">&gt; 2.5 × In</td>
+        </tr>
+        <tr>
+          <td>Max ambient temperature</td>
+          <td>40 °C</td>
+          <td>45 °C</td>
+          <td class="specs-highlight">55 °C</td>
+        </tr>
+        <tr>
+          <td>Typical use</td>
+          <td>Clean or stable networks</td>
+          <td>Industrial networks with VFDs</td>
+          <td>Severe harmonic and thermal conditions</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div></div>
+
+<!-- 6. CAPACITOR MATCHING — grey -->
+<div class="section-alt-wrap"><div class="section">
+  <div class="section-label">Capacitor Matching</div>
+  <h2>Matching Reactors with Capacitors</h2>
+  <p class="section-intro">The inductance of a detuned reactor must be calculated in relation to the capacitor it is paired with. The resonance frequency of the LC circuit depends on both the capacitance value and the reactor inductance — not on the kVAr rating alone. Two approaches are available depending on whether the capacitor bank is new or existing.</p>
+
+  <div class="series-grid" style="margin-top:20px">
+    <div class="series-card">
+      <div class="article-cat">New PFC Systems</div>
+      <h3>GE-RTM3 — Reactor + Capacitor Matched Units</h3>
+      <p class="positioning">Reactor and capacitor are engineered together as a complete LC step. Used when the system is designed from scratch to achieve the required kVAr output and tuning frequency. Optimized LC configuration, accurate kVAr output and reduced mismatch risk.</p>
+    </div>
+    <div class="series-card top">
+      <div class="article-cat">Retrofit Applications</div>
+      <h3>GE-RT3 — Reactors for Existing Capacitor Banks</h3>
+      <p class="positioning">Reactor inductance is calculated according to the installed capacitance, network voltage and required tuning factor. Used when the capacitor bank already exists and only the reactor must be added or replaced.</p>
+    </div>
+  </div>
+
+  <div class="info-box" style="margin-top:24px">
+    <p><strong>Example:</strong> For a 7% detuned step at 400 V requiring 25 kVAr, reactor and capacitor must be calculated together as a matched unit. If an existing 25 kVAr capacitor rated at 440 V is used instead, the actual capacitance will differ from the nominal kVAr value at 400 V — and the required reactor inductance must be recalculated accordingly.</p>
+  </div>
+</div></div>
+
+<!-- 7. COMMON MISTAKES — white -->
+<div class="section-wrap"><div class="section">
+  <div class="section-label">Common Mistakes</div>
+  <h2>Common Mistakes in Detuned Reactor Selection</h2>
+  <p class="section-intro">The following errors are frequently encountered in detuned reactor selection and can result in resonance, component failure or suboptimal system performance.</p>
+  <div class="problem-grid">
+    <div class="problem-card">
+      <p>Selecting the reactor based only on kVAr rating, without considering actual capacitor capacitance</p>
+    </div>
+    <div class="problem-card">
+      <p>Ignoring the actual capacitor capacitance value when calculating required inductance</p>
+    </div>
+    <div class="problem-card">
+      <p>Confusing tuning factor with harmonic capability — a higher tuning factor does not mean higher robustness</p>
+    </div>
+    <div class="problem-card">
+      <p>Using a Standard design reactor in installations with high harmonic stress or high ambient temperature</p>
+    </div>
+    <div class="problem-card">
+      <p>Assuming that detuned reactors reduce THDu or THDi — they prevent resonance but do not filter harmonics</p>
+    </div>
+    <div class="problem-card">
+      <p>Ignoring 3rd harmonic or zero-sequence harmonic components present in unbalanced or single-phase-dominated networks</p>
+    </div>
+  </div>
+</div></div>
+
+<!-- 8. WHEN NOT ENOUGH — grey -->
+<div class="section-alt-wrap"><div class="section">
+  <div class="section-label">Harmonic Mitigation</div>
+  <h2>When a Detuned Reactor Is Not Enough</h2>
+  <p class="section-intro">Detuned reactors are designed to prevent resonance and protect capacitor banks — they are not harmonic filters. If the objective is to reduce THDi or THDu to comply with grid standards or equipment requirements, detuned reactors alone will not achieve this.</p>
+  <p class="section-intro">For harmonic mitigation, passive harmonic filters or active harmonic filters may be required depending on the load profile, harmonic spectrum, system impedance and the target THD levels. The appropriate solution must be determined through a power quality analysis of the installation.</p>
+
+  <div class="series-grid" style="margin-top:24px">
+    <a class="series-card" href="/products/power-quality-harmonics">
+      <div class="article-cat">Products</div>
+      <h3>Power Quality &amp; Harmonics</h3>
+      <p class="positioning">Overview of harmonic mitigation solutions including line reactors, passive filters and active harmonic filters for industrial installations.</p>
+      <span class="view-series">View Products →</span>
+    </a>
+    <a class="series-card" href="/products/power-quality-harmonics/active-harmonic-filters">
+      <div class="article-cat">Products</div>
+      <h3>Active Harmonic Filters</h3>
+      <p class="positioning">Electronic systems for real-time harmonic compensation in installations with variable and mixed load profiles.</p>
+      <span class="view-series">View Products →</span>
+    </a>
+    <a class="series-card" href="/products/power-quality-harmonics/passive-harmonic-filters">
+      <div class="article-cat">Products</div>
+      <h3>Passive Harmonic Filters</h3>
+      <p class="positioning">Tuned passive filters for fixed harmonic mitigation where the dominant harmonic order is known and stable.</p>
+      <span class="view-series">View Products →</span>
+    </a>
+  </div>
+</div></div>
+
+<!-- RELATED ARTICLES — white -->
+<div class="section-wrap"><div class="section">
+  <div class="section-label">Related</div>
+  <h2>Related Products &amp; Articles</h2>
+  <div class="series-grid">
+    <a class="series-card" href="/products/lv-detuned-harmonic-reactors">
+      <div class="article-cat">Products</div>
+      <h3>LV Detuned Harmonic Reactors</h3>
+      <p class="positioning">GE-RTM3 and GE-RT3 families. Standard, Heavy Duty and Extra Heavy Duty designs. 5.67%, 7% and 14% tuning factors.</p>
+      <span class="view-series">View Products →</span>
+    </a>
+    <a class="series-card" href="/products/lv-power-factor-correction-capacitors">
+      <div class="article-cat">Products</div>
+      <h3>LV Power Factor Correction Capacitors</h3>
+      <p class="positioning">Six series for different harmonic levels and network conditions — from standard to extra heavy duty industrial designs.</p>
+      <span class="view-series">View Products →</span>
+    </a>
+    <a class="series-card" href="/applications/power-factor-correction-harmonics">
+      <div class="article-cat">Application Note</div>
+      <h3>Power Factor Correction in Harmonic Environments</h3>
+      <p class="positioning">Why standard capacitors are not suitable for networks with VFDs and how detuned solutions prevent resonance.</p>
+      <span class="view-series">Read Article →</span>
+    </a>
+    <a class="series-card" href="/applications/thdi-vs-thdu">
+      <div class="article-cat">Harmonics</div>
+      <h3>THDi vs THDu Explained</h3>
+      <p class="positioning">The difference between current and voltage harmonic distortion and how they affect equipment selection.</p>
+      <span class="view-series">Read Article →</span>
+    </a>
+  </div>
+</div></div>
+
+<!-- CTA -->
+<div class="cta-banner">
+  <div class="cta-banner-text">
+    <h2>Need Help Selecting the Correct Reactor?</h2>
+    <p>Send us voltage, kVAr per step, capacitor data, frequency, harmonic measurements and operating conditions. Our technical team can help define tuning factor, inductance and reactor design level.</p>
+  </div>
+  <div class="cta-btns">
+    <a href="/contact" class="btn-primary">Request Technical Support</a>
+    <a href="/contact" class="btn-secondary">Contact Technical Team</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo"><img src="/LOGO%202017%20copia.png" alt="Gruppo Energia s.r.l."></div>
+      <div class="footer-logo-name">Gruppo Energia s.r.l.</div>
+      <div class="footer-desc">Italian manufacturer of LV/MV power factor correction systems, detuned reactors, harmonic filters, transformers and drive protection components. 25+ years · 40+ countries · 1,400+ installations.</div>
+      <div class="footer-contact">
+        <a href="mailto:info@gruppoenergia.com">info@gruppoenergia.com</a><br>
+        <a href="tel:+390303203010">+39 030 320301</a><br>
+        <a href="tel:+393480076538">+39 348 0076538</a><br>
+        Via Cavezzo 36, 25045 Castegnato (BS) Italy
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <a href="/products/lv-power-factor-correction">LV Power Factor Correction</a>
+      <a href="/products/mv-power-factor-correction">MV Power Factor Correction</a>
+      <a href="/products/power-electronics-capacitors">Power Electronics Capacitors</a>
+      <a href="/products/induction-heating-capacitors">Induction Heating</a>
+      <a href="/products/power-quality-harmonics">Power Quality &amp; Harmonics</a>
+      <a href="/products/transformers-voltage-regulation">Transformers</a>
+      <a href="/products/motor-lighting-capacitors">Motor &amp; Lighting</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="/about">About Us</a>
+      <a href="/applications">Applications</a>
+      <a href="/export">Export &amp; Markets</a>
+      <a href="/blog">Blog</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="/documentation">Documentation</a>
+      <a href="/faq">FAQ</a>
+      <a href="/catalogue">Product Catalogue</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/terms">Terms &amp; Conditions</a>
+    <a href="/cookies">Cookie Policy</a>
+    <a href="/disclaimer">Technical Disclaimer</a>
+    <span class="footer-copy">© 2025 Gruppo Energia s.r.l. — Castegnato (BS) Italy</span>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  const menu=document.getElementById('mobileMenu');
+  const button=document.querySelector('.navbar-hamburger');
+  const isOpen=menu.classList.toggle('open');
+  button.setAttribute('aria-expanded',isOpen?'true':'false');
+}
+document.addEventListener('click',function(e){
+  const m=document.getElementById('mobileMenu');
+  const b=document.querySelector('.navbar-hamburger');
+  if(m.classList.contains('open')&&!m.contains(e.target)&&!b.contains(e.target)){
+    m.classList.remove('open');
+    b.setAttribute('aria-expanded','false');
+  }
+});
+</script>
+</body>
+</html>
