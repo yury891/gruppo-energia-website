@@ -481,26 +481,31 @@ function renderTable() {
   const tbody   = document.getElementById('ratings-tbody');
 
   const fRes = resFreq[p.toString()][freq];
+  const p_pct = p * 100;
 
   // Update resonance frequency display
   document.getElementById('res-freq-display').textContent = fRes + ' Hz';
 
-  // Vcap = V / (1 - p) — same for all rows at this voltage
-  const vcap = voltage / (1 - p);
+  // Vcap = V * 100 / (100 - p%) — same for all rows
+  const vcap = voltage * 100 / (100 - p_pct);
   const minCapV = getMinCapVoltage(vcap);
 
   tbody.innerHTML = kvarList.map(kvar => {
-    // Capacitance 3-phase: C = (kVAr*1000) / (3 * 2π * f * V²)
-    const C = (kvar * 1000) / (3 * 2 * Math.PI * freq * voltage * voltage);
-    const C_uF = C * 1e6;
+    // Vcap = V * 100 / (100 - p%)
+    const Vcap = voltage * 100 / (100 - p_pct);
 
-    // Inductance: L = p / ((2π*f)² * C)
-    const omega = 2 * Math.PI * freq;
-    const L = p / (omega * omega * C);
-    const L_mH = L * 1000;
+    // kVAr on capacitor = (1 - p) * (Vcap²/V²) * kVAr_step
+    const kvar_cap = (1 - p_pct/100) * (Vcap**2 / voltage**2) * kvar;
 
-    // Current: I = (kVAr*1000) / (√3 * V)
-    const I = (kvar * 1000) / (Math.sqrt(3) * voltage);
+    // Capacitance 3-phase: C = ((kVAr_cap / (6.28 * (freq/1000) * Vcap²)) * 1e6) / 3
+    const C_uF = ((kvar_cap / (6.28 * (freq / 1000) * Vcap * Vcap)) * 1e6) / 3;
+
+    // Inductance: L = (p% / (100 * 4π² * f² * 3 * C_µF * 1e-6)) * 1e6  [µH] → /1000 → mH
+    const L_uH = (p_pct / (100 * 4 * Math.PI**2 * freq**2 * 3 * C_uF * 1e-6)) * 1e6;
+    const L_mH = L_uH / 1000;
+
+    // Current: I = kVAr_step / (V/1000) / √3
+    const I = kvar / (voltage / 1000) / Math.sqrt(3);
 
     // Part number
     const partNumber = `GE3RTM${kvar}.${voltage}R${fRes}`;
