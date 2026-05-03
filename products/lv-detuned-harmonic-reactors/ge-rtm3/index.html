@@ -254,15 +254,15 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
       <select id="filter-voltage" onchange="renderTable()">
         <option value="220">220 V</option>
         <option value="230">230 V</option>
-        <option value="380">380 V</option>
+        <option value="240">240 V</option>
         <option value="400" selected>400 V</option>
         <option value="415">415 V</option>
         <option value="440">440 V</option>
+        <option value="460">460 V</option>
         <option value="480">480 V</option>
         <option value="525">525 V</option>
-        <option value="600">600 V</option>
         <option value="690">690 V</option>
-        <option value="780">780 V</option>
+        <option value="760">760 V</option>
         <option value="850">850 V</option>
       </select>
     </div>
@@ -276,14 +276,16 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
     <div class="filter-group">
       <label for="filter-tuning">Tuning Factor</label>
       <select id="filter-tuning" onchange="renderTable()">
-        <option value="0.07">7% — 189 Hz (50 Hz) / 227 Hz (60 Hz)</option>
-        <option value="0.0567">5.67% — 210 Hz (50 Hz) / 252 Hz (60 Hz)</option>
-        <option value="0.14">14% — 134 Hz (50 Hz) / 160 Hz (60 Hz)</option>
+        <option value="0.0567">5.67%</option>
+        <option value="0.07" selected>7%</option>
+        <option value="0.14">14%</option>
       </select>
     </div>
+    <div class="filter-group">
+      <label>Resonance Frequency</label>
+      <div id="res-freq-display" style="font-size:13px;font-weight:700;color:#0D2E5A;border:1px solid #D0D8E8;border-radius:3px;padding:7px 14px;background:#F4F7FB;min-width:100px;line-height:1.5">— Hz</div>
+    </div>
   </div>
-
-  <div id="table-info" style="font-size:13px;color:#4A6080;margin-bottom:14px;line-height:1.6"></div>
 
   <div class="ratings-table-wrap">
     <table class="ratings-table">
@@ -292,8 +294,8 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
           <th>Part Number</th>
           <th>Power (kVAr)</th>
           <th>Inductance (3 × mH)</th>
-          <th>Capacitance (3 × µF)</th>
           <th>Current (A)</th>
+          <th>Capacitance (3 × µF)</th>
           <th>Min. Capacitor Voltage</th>
           <th>Dimensions</th>
         </tr>
@@ -465,7 +467,7 @@ const resFreq = {
 };
 
 // Available capacitor voltage standards
-const capVoltages = [220, 230, 240, 380, 400, 415, 440, 480, 525, 600, 690, 780, 850];
+const capVoltages = [220, 230, 240, 400, 415, 440, 460, 480, 525, 690, 760, 850, 1000];
 
 function getMinCapVoltage(vcap) {
   const found = capVoltages.find(v => v >= vcap);
@@ -477,16 +479,15 @@ function renderTable() {
   const freq    = parseFloat(document.getElementById('filter-freq').value);
   const p       = parseFloat(document.getElementById('filter-tuning').value);
   const tbody   = document.getElementById('ratings-tbody');
-  const info    = document.getElementById('table-info');
 
   const fRes = resFreq[p.toString()][freq];
-  const tuningPct = p === 0.0567 ? '5.67%' : p === 0.07 ? '7%' : '14%';
 
-  // Vcap = V / (1 - p)
+  // Update resonance frequency display
+  document.getElementById('res-freq-display').textContent = fRes + ' Hz';
+
+  // Vcap = V / (1 - p) — same for all rows at this voltage
   const vcap = voltage / (1 - p);
   const minCapV = getMinCapVoltage(vcap);
-
-  info.innerHTML = `Resonance frequency: <strong>${fRes} Hz</strong> &nbsp;·&nbsp; Tuning: <strong>${tuningPct}</strong> &nbsp;·&nbsp; Capacitor voltage: <strong>≥ ${minCapV}</strong> (all steps at this voltage)`;
 
   tbody.innerHTML = kvarList.map(kvar => {
     // Capacitance 3-phase: C = (kVAr*1000) / (3 * 2π * f * V²)
@@ -508,8 +509,8 @@ function renderTable() {
       <td>${partNumber}</td>
       <td>${kvar}</td>
       <td>${L_mH.toFixed(3)}</td>
-      <td>${C_uF.toFixed(2)}</td>
       <td>${I.toFixed(2)}</td>
+      <td>${C_uF.toFixed(2)}</td>
       <td>≥ ${minCapV}</td>
       <td class="dim-note"><a href="/documentation/ge-rtm3-dimensions.pdf">View standard dimensions</a></td>
     </tr>`;
