@@ -226,7 +226,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
   <div class="section-label">Tuning Factor</div>
   <h2>Choosing the Tuning Factor: 5.67%, 7% or 14%</h2>
   <p class="section-intro">The detuning factor defines the resonance frequency of the LC circuit — it does not define reactor robustness or harmonic capability. A higher tuning factor means a lower resonance frequency, which places the tuned circuit further from the dominant harmonics. Selection depends on the harmonic spectrum present in the network, not on a general rule of "clean" versus "dirty" networks.</p>
-  <p class="section-intro">A 14% tuning factor is not reserved only for highly distorted networks. It is selected when the resonance frequency must be placed well below the 3rd harmonic, for example in installations with low-order harmonic components, unbalanced loads or specific harmonic conditions identified by measurement.</p>
+  <p class="section-intro">A 14% tuning factor is not reserved only for highly distorted networks. It is selected when the resonance frequency must be placed below low-order harmonics such as the 3rd harmonic, for example in installations with low-order harmonic components, unbalanced loads or specific harmonic conditions identified by measurement.</p>
 
   <div class="specs-table-wrap" style="margin-top:20px">
     <table class="specs-table">
@@ -311,7 +311,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
       </tbody>
     </table>
   </div>
-  <p class="table-disclaimer">THDi limits depend on the assumed harmonic spectrum and reactor design. Values are indicative — final selection requires evaluation of the full harmonic spectrum and operating conditions of the specific installation.</p>
+  <p class="table-disclaimer">THDi limits refer to specific assumed harmonic spectra and reactor design levels. They are application limits for selection support, not universal guarantees. Final selection must be based on measured harmonic spectrum, capacitor data, voltage, frequency and operating conditions.</p>
 </div></div>
 
 <!-- 5. DESIGN LEVEL — white -->
@@ -416,7 +416,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;line-
 <div class="section-alt-wrap"><div class="section">
   <div class="section-label">Harmonic Mitigation</div>
   <h2>When a Detuned Reactor Is Not Enough</h2>
-  <p class="section-intro">Detuned reactors are designed to prevent resonance and protect capacitor banks — they are not harmonic filters. If the objective is to reduce THDi or THDu to comply with grid standards or equipment requirements, detuned reactors alone will not achieve this.</p>
+  <p class="section-intro">Detuned reactors are designed to prevent resonance and protect capacitor banks — they are not designed as harmonic mitigation filters. If the objective is to reduce THDi or THDu to comply with grid standards or equipment requirements, detuned reactors alone will not achieve this.</p>
   <p class="section-intro">For harmonic mitigation, passive harmonic filters or active harmonic filters may be required depending on the load profile, harmonic spectrum, system impedance and the target THD levels. The appropriate solution must be determined through a power quality analysis of the installation.</p>
 
   <div class="series-grid" style="margin-top:24px">
